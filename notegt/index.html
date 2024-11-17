@@ -3149,19 +3149,19 @@ $$</p>
 <p>例子：</p>
 </li>
 </ol>
-<p>一、单总体 <span class="arithmatex">\(N\left(\mu, \sigma^2\right)\)</span> 常用枢轴量
-   (1) <span class="arithmatex">\(\sigma^2\)</span> 已知, 求 <span class="arithmatex">\(\mu\)</span> 的区间估计: <span class="arithmatex">\(G=\frac{\bar{X}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)\)</span>
-   (2) <span class="arithmatex">\(\sigma^2\)</span> 未知, 求 <span class="arithmatex">\(\mu\)</span> 的区间估计: <span class="arithmatex">\(\frac{\bar{X}-\mu}{S / \sqrt{n}} \sim t(n-1)\)</span>
-   (3) <span class="arithmatex">\(\mu\)</span> 未知, 求 <span class="arithmatex">\(\sigma^2\)</span> 的区间估计: <span class="arithmatex">\(\frac{(n-1) S^2}{\sigma^2}=\sum_{i=1}^n\left(\frac{X_i-\bar{X}}{\sigma}\right)^2 \sim \chi^2(n-1)\)</span>
-   *(4) <span class="arithmatex">\(\mu\)</span> 已知, 求 <span class="arithmatex">\(\sigma^2\)</span> 的区间估计: <span class="arithmatex">\(\sum_{i=1}^n\left(\frac{X_i-\mu}{\sigma}\right)^2 \sim \chi^2(n)\)</span>​</p>
+<p>一、单总体 <span class="arithmatex">\(N\left(\mu, \sigma^2\right)\)</span> 常用枢轴量</p>
+<p>(1) <span class="arithmatex">\(\sigma^2\)</span> 已知, 求 <span class="arithmatex">\(\mu\)</span> 的区间估计: <span class="arithmatex">\(G=\frac{\bar{X}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)\)</span></p>
+<p>(2) <span class="arithmatex">\(\sigma^2\)</span> 未知, 求 <span class="arithmatex">\(\mu\)</span> 的区间估计: <span class="arithmatex">\(\frac{\bar{X}-\mu}{S / \sqrt{n}} \sim t(n-1)\)</span></p>
+<p>(3) <span class="arithmatex">\(\mu\)</span> 未知, 求 <span class="arithmatex">\(\sigma^2\)</span> 的区间估计: <span class="arithmatex">\(\frac{(n-1) S^2}{\sigma^2}=\sum_{i=1}^n\left(\frac{X_i-\bar{X}}{\sigma}\right)^2 \sim \chi^2(n-1)\)</span></p>
+<p>*(4) <span class="arithmatex">\(\mu\)</span> 已知, 求 <span class="arithmatex">\(\sigma^2\)</span> 的区间估计: <span class="arithmatex">\(\sum_{i=1}^n\left(\frac{X_i-\mu}{\sigma}\right)^2 \sim \chi^2(n)\)</span>​​​​​</p>
 <p>二、双总体的常用枢轴量</p>
-<p>(1) <span class="arithmatex">\(\sigma_1^2, \sigma_2^2 己\)</span> 知, 求 <span class="arithmatex">\(\mu_1-\mu_2\)</span> 的区间估计: <span class="arithmatex">\(\frac{(\bar{X}-\bar{Y})-\left(\mu_1-\mu_2\right)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}} \sim N(0,1)\)</span>
-   (2) <span class="arithmatex">\(\sigma_1^2=\sigma_2^2\)</span> 未知, 求 <span class="arithmatex">\(\mu_1-\mu_2\)</span>的区间估计:
-   $$
+<p>(1) <span class="arithmatex">\(\sigma_1^2, \sigma_2^2 己\)</span> 知, 求 <span class="arithmatex">\(\mu_1-\mu_2\)</span> 的区间估计: <span class="arithmatex">\(\frac{(\bar{X}-\bar{Y})-\left(\mu_1-\mu_2\right)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}} \sim N(0,1)\)</span></p>
+<p>(2) <span class="arithmatex">\(\sigma_1^2=\sigma_2^2\)</span> 未知, 求 <span class="arithmatex">\(\mu_1-\mu_2\)</span>​​的区间估计:</p>
+<p>$$
    \frac{(\bar{X}-\bar{Y})-\left(\mu_1-\mu_2\right)}{S_{w}\sqrt{{\frac{1}{n_1}+\frac{1}{n_2}}}} \sim I\left(n_1+n_2-2\right)
-   $$
-   (3) <span class="arithmatex">\(\mu_1, \mu_2\)</span> 未知, 求 <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span> 的区间估计: <span class="arithmatex">\(\frac{S_1^2}{S_2^2} / \frac{\sigma_1^2}{\sigma_2^2} \sim F\left(n_1-1, n_2-1\right)\)</span>
-   (4) <span class="arithmatex">\(\mu_1, \mu_2\)</span> 已知, 求 <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span> 的区间估计: <span class="arithmatex">\(\frac{\sum_{m=1}^n\left(X_1-\mu_1\right)^2 / n_1}{\sum_{i=1}^2\left(Y_1-\mu_2\right)^2 / n_2} / \frac{\sigma_1^2}{\sigma_2^2} \sim F\left(n_1, n_2\right)\)</span></p>
+   $$</p>
+<p>(3) <span class="arithmatex">\(\mu_1, \mu_2\)</span> 未知, 求 <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span> 的区间估计: <span class="arithmatex">\(\frac{S_1^2}{S_2^2} / \frac{\sigma_1^2}{\sigma_2^2} \sim F\left(n_1-1, n_2-1\right)\)</span></p>
+<p>(4) <span class="arithmatex">\(\mu_1, \mu_2\)</span> 已知, 求 <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span> 的区间估计: <span class="arithmatex">\(\frac{\sum_{m=1}^n\left(X_1-\mu_1\right)^2 / n_1}{\sum_{i=1}^2\left(Y_1-\mu_2\right)^2 / n_2} / \frac{\sigma_1^2}{\sigma_2^2} \sim F\left(n_1, n_2\right)\)</span>​</p>
 <h4 id="_13">评价准则</h4>
 <h5 id="_14">（一）无偏性原则</h5>
 <div class="arithmatex">\[
