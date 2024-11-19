@@ -2019,6 +2019,54 @@
     Chapter 4  随机变量的数字特征
   </a>
   
+    <nav class="md-nav" aria-label="Chapter 4 随机变量的数字特征">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    数学期望
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    方差
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    协方差
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    相关系数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    分位数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    多维正态变量
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2872,6 +2920,54 @@
     Chapter 4  随机变量的数字特征
   </a>
   
+    <nav class="md-nav" aria-label="Chapter 4 随机变量的数字特征">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    数学期望
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    方差
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    协方差
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    相关系数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    分位数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    多维正态变量
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2982,6 +3078,112 @@ f_Z(z)=\int_{-\infty}^{+\infty}f_X(z-y)f_Y(y)dx
 <p><span class="arithmatex">\(1-F_N(t)=(1-F_X(t))(1-F_Y(t))\)</span></p>
 <p>推广到多变量思想相同</p>
 <h2 id="chapter-4">Chapter 4  随机变量的数字特征</h2>
+<h3 id="_13">数学期望</h3>
+<p><strong>定义</strong></p>
+<p>离散型随机变量，若级数<span class="arithmatex">\(\overset{+\infty}{\underset{i=1}{\Sigma}}x_ip_i\)</span>绝对收敛，则称该级数为该随机变量的数学期望，记为
+$$
+E(X)=\overset{+\infty}{\underset{i=1}{\Sigma}}x_ip_i
+$$
+该级数为<span class="arithmatex">\(+\infty\)</span>时，期望不存在</p>
+<p>同理可定义连续型随机变量：
+$$
+E(X)=\int^{+\infty}_{-\infty}xf(x)dx
+$$
+<strong>泊松分布数学期望</strong>
+$$
+E(X)=\lambda
+$$
+<strong>指数分布数学期望</strong>
+$$
+E(X)=\frac{1}{\lambda}
+$$
+<strong>正态分布数学期望</strong>
+$$
+E(X)=\mu
+$$
+<strong>懒人公式（by 赵敏智老师）</strong></p>
+<p>离散型
+$$
+E(g(X))=\overset{+\infty}{\underset{i=1}{\Sigma}}g(x_i)p_i
+$$</p>
+<p>连续型
+$$
+E(g(X))=\int^{+\infty}_{-\infty}g(x)f(x)dx
+$$</p>
+<p>二维离散型
+$$
+E(h(X,Y))=\overset{+\infty}{\underset{i=1}{\Sigma}}\overset{+\infty}{\underset{j=1}{\Sigma}}h(x_i,y_i)p_{ij}
+$$</p>
+<p>二维连续型</p>
+<div class="arithmatex">\[
+E(h(X,Y))=\int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}h(x,y)f(x,y)dxdy
+\]</div>
+<p><strong>数学期望性质</strong></p>
+<p>1.线性性：<span class="arithmatex">\(E(aX+b)=aE(X)+b\)</span></p>
+<p>2.可加性：<span class="arithmatex">\(E(X_1+X_2+...+X_n)=E(X_1)+E(X_2)+...+E(X_n)\)</span></p>
+<p>3.独立可乘性：<span class="arithmatex">\(X,Y\)</span>独立，<span class="arithmatex">\(E(XY)=E(X)E(Y)\)</span>，多变量同理</p>
+<h3 id="_14">方差</h3>
+<p><strong>定义和计算</strong>
+$$
+Var(X)=E[(X-E(X))^2]=E(X^2)-(E(X))^2
+$$
+<strong>泊松分布方差</strong>
+$$
+Var(X)=\lambda
+$$
+<strong>指数分布方差</strong>
+$$
+Var(X)=\frac{1}{\lambda^2}
+$$
+<strong>二项分布方差</strong>
+$$
+Var(X)=np(1-p)
+$$
+<strong>性质</strong></p>
+<p>1.<span class="arithmatex">\(Var(aX+b)=a^2Var(X)\)</span></p>
+<p>2.<span class="arithmatex">\(Var(X)\le E[(X-c)^2]\)</span>，当且仅当<span class="arithmatex">\(E(X)=c\)</span>时等号成立</p>
+<p>3.若<span class="arithmatex">\(Var(X)=0\)</span>，则<span class="arithmatex">\(X\)</span>恒为常数</p>
+<p>4.独立可加性：<span class="arithmatex">\(Var(X_1+X_2+...+X_n)=Var(X_1)+Var(X_2)+...+Var(X_n)\)</span></p>
+<p>5.<span class="arithmatex">\(Var(X+Y)=Var(X)+Var(Y)-Cov(X,Y)\)</span></p>
+<h3 id="_15">协方差</h3>
+<p><strong>定义及计算</strong>
+$$
+Cov(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y)
+$$
+<strong>性质</strong></p>
+<p>1.<span class="arithmatex">\(Cov(X,Y)=Cov(Y,X)\)</span></p>
+<p>2.<span class="arithmatex">\(Cov(X,X)=Var(X)\)</span></p>
+<p>3.<span class="arithmatex">\(Cov(aX,bY)=abCov(X,Y)\)</span></p>
+<p>4.<span class="arithmatex">\(Cov(X_1+X_2,Y)=Cov(X_1,Y)+Cov(X_2,Y)\)</span></p>
+<p>5.若<span class="arithmatex">\(X,Y\)</span>相互独立，则<span class="arithmatex">\(Cov(X,Y)=0\)</span>，<strong>反之则不然</strong></p>
+<p>6.<span class="arithmatex">\((Cov(X,Y))^2\le Var(X)Var(Y)\)</span>，当且仅当<span class="arithmatex">\(X,Y\)</span>​严格线性相关时等号成立</p>
+<h3 id="_16">相关系数</h3>
+<div class="arithmatex">\[
+\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{Var(X)}\sqrt{Var(Y)}}
+\]</div>
+<p><strong>性质</strong></p>
+<p>1.若<span class="arithmatex">\(X,Y\)</span>独立，则相关系数<span class="arithmatex">\(\rho_{XY}=0\)</span>​，<strong>但反之不然</strong></p>
+<p>2.<span class="arithmatex">\(|\rho_{XY}|\le 1\)</span>，等号成立时<span class="arithmatex">\(X,Y\)</span>严格线性相关，为正时正相关，为负时负相关，为0时不相关</p>
+<p><strong>注意</strong></p>
+<p>独立可以推出不相关，不相关不能推出独立</p>
+<h3 id="_17">分位数</h3>
+<div class="arithmatex">\[
+P(X&gt;\alpha)=\int_{x_\alpha}^{+\infty}f(x)dx=\alpha
+\]</div>
+<p>则<span class="arithmatex">\(x_\alpha\)</span>为<span class="arithmatex">\(\alpha\)</span>分位数。</p>
+<p>对于偶函数，<span class="arithmatex">\(x_{\alpha}=-x_{1-\alpha}\)</span></p>
+<h3 id="_18">多维正态变量</h3>
+<p><strong>协方差矩阵</strong>
+$$
+Cov(X)=(Cov(X_i,X_j))_{n×n}
+$$
+<strong>性质</strong></p>
+<ol>
+<li>n维正态变量任意k维子向量也服从k元正态分布。特别地，n维正态变量中的每个分量都服从一元正态分布。</li>
+<li><span class="arithmatex">\((X_1,X_2,...,X_n)^T\)</span>服从n元正态分布的充要条件是各个分量的任意线性组合服从一元正态分布</li>
+<li><span class="arithmatex">\((X_1,X_2,...,X_n)^T\)</span>服从n元正态分布，<span class="arithmatex">\((Y_1,Y_2,...,Y_k)^T\)</span>每个分量都是X的线性函数，则Y服从k元正态分布。</li>
+<li>服从n元正态分布的随机变量X中的分量<span class="arithmatex">\(X_1,X_2,...,X_n\)</span>相互独立的充要条件是他们两两不相关，等价于<span class="arithmatex">\(Cov(X)\)</span>的矩阵为对角矩阵。</li>
+</ol>
 
 
 
