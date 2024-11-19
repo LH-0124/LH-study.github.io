@@ -3065,10 +3065,10 @@ $$</p>
 f_Z(z)=\int_{-\infty}^{+\infty}f_X(z-y)f_Y(y)dx
 \]</div>
 <p>当密度函数不复杂时，如均匀分布，可考虑面积之比来求<span class="arithmatex">\(Z\)</span>的面积函数</p>
-<div class="admonition note">
-<p class="admonition-title">例</p>
-<p>待填充例题</p>
-</div>
+<details class="note">
+<summary>例题</summary>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1119/2jj1tqkv.webp" /><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1119/3jfrqhfe.webp" /></p>
+</details>
 <p><strong>推导出的一个结论</strong></p>
 <p><span class="arithmatex">\(n\)</span>个相互独立的服从泊松分布的随机变量的和仍服从泊松分布，其参数为<span class="arithmatex">\(n\)</span>个分布的参数的和</p>
 <h4 id="xy"><span class="arithmatex">\(X,Y\)</span>最大值最小值的分布</h4>
@@ -3175,15 +3175,17 @@ P(X&gt;\alpha)=\int_{x_\alpha}^{+\infty}f(x)dx=\alpha
 <h3 id="_18">多维正态变量</h3>
 <p><strong>协方差矩阵</strong>
 $$
-Cov(X)=(Cov(X_i,X_j))_{n×n}
+Cov(\pmb{X})=(Cov(X_i,X_j))_{n×n}
 $$
 <strong>性质</strong></p>
-<ol>
-<li><span class="arithmatex">\(n\)</span>维正态变量任意<span class="arithmatex">\(k\)</span>维子向量也服从k元正态分布。特别地，<span class="arithmatex">\(n\)</span>维正态变量中的每个分量都服从一元正态分布。</li>
-<li><span class="arithmatex">\((X_1,X_2,...,X_n)^T\)</span>服从<span class="arithmatex">\(n\)</span>元正态分布的充要条件是各个分量的任意线性组合服从一元正态分布</li>
-<li><span class="arithmatex">\((X_1,X_2,...,X_n)^T\)</span>服从<span class="arithmatex">\(n\)</span>元正态分布，<span class="arithmatex">\((Y_1,Y_2,...,Y_k)^T\)</span>每个分量都是<span class="arithmatex">\(X\)</span>的线性函数，则<span class="arithmatex">\(Y\)</span>服从<span class="arithmatex">\(k\)</span>元正态分布。</li>
-<li>服从<span class="arithmatex">\(n\)</span>元正态分布的随机变量X中的分量<span class="arithmatex">\(X_1,X_2,...,X_n\)</span>相互独立的充要条件是他们两两不相关，等价于<span class="arithmatex">\(Cov(X)\)</span>的矩阵为对角矩阵。</li>
-</ol>
+<p>（1）<span class="arithmatex">\(n\)</span>维正态变量任意<span class="arithmatex">\(k\)</span>维子向量也服从k元正态分布。特别地，<span class="arithmatex">\(n\)</span>维正态变量中的每个分量都服从一元正态分布。</p>
+<p>（2）<span class="arithmatex">\(\pmb{X}=(X_1,X_2,...,X_n)^T\)</span>服从<span class="arithmatex">\(n\)</span>元正态分布的充要条件是各个分量的任意线性组合服从一元正态分布</p>
+<p>（3）<span class="arithmatex">\(\pmb{X}=(X_1,X_2,...,X_n)^T\)</span>服从<span class="arithmatex">\(n\)</span>元正态分布，<span class="arithmatex">\(\pmb{Y}=(Y_1,Y_2,...,Y_k)^T\)</span>每个分量都是<span class="arithmatex">\(X\)</span>的线性函数，则<span class="arithmatex">\(\pmb{Y}\)</span>服从<span class="arithmatex">\(k\)</span>元正态分布。</p>
+<p>（4）服从<span class="arithmatex">\(n\)</span>元正态分布的随机变量<span class="arithmatex">\(X\)</span>中的分量<span class="arithmatex">\(X_1,X_2,...,X_n\)</span>相互独立的充要条件是他们两两不相关，等价于<span class="arithmatex">\(Cov(X)\)</span>​的矩阵为对角矩阵。</p>
+<details class="note">
+<summary>例题</summary>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1119/b5x03sfk.webp" /><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1119/1cnofkmh.webp" /><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1119/vg3uk4o1.webp" /><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1119/vg3uk4o1.webp" /> <img alt="" src="https://file.cc98.org/v4-upload/d/2024/1119/cznal1mz.webp" /></p>
+</details>
 
 
 
