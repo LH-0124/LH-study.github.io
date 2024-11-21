@@ -1846,6 +1846,19 @@
     2.字符串函数
   </a>
   
+    <nav class="md-nav" aria-label="2.字符串函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strlen" class="md-nav__link">
+    strlen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2706,6 +2719,19 @@
     2.字符串函数
   </a>
   
+    <nav class="md-nav" aria-label="2.字符串函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strlen" class="md-nav__link">
+    strlen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2740,7 +2766,10 @@
 <span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w">  </span><span class="err">#</span><span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="err">，</span><span class="n">行数</span>
 <span class="n">n</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span><span class="w">   </span><span class="err">#</span><span class="n">n</span><span class="o">=</span><span class="mi">8</span><span class="err">，</span><span class="n">总元素个数</span>
 </code></pre></div>
+<p>定义时数组行号可以空心，列数不可以空心</p>
 <h2 id="2">2.字符串函数</h2>
+<p>头文件要#inlcude  <string.h></p>
+<h3 id="strlen">strlen</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
 <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
@@ -2748,14 +2777,17 @@
 </code></pre></div>
 <p>strlen函数返回'\0'左边的元素个数，也是'\0'元素的索引下标</p>
 <p>函数实现：</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">my_strlen</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w">  </span><span class="cp">#这里a是用一维数组做形参</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">my_strlen</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span><span class="w">  </span><span class="cp">#这里a是用一维数组做形参，或写成char a[100]</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="sc">&#39;\0&#39;</span><span class="p">)</span>
 <span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
 <span class="p">}</span>
+<span class="n">n</span><span class="o">=</span><span class="n">my_strlen</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">   </span><span class="err">#</span><span class="n">这里的a是用一维数组做实参</span><span class="err">，</span><span class="n">只能是a</span><span class="err">，</span><span class="n">a</span><span class="p">[]</span><span class="n">或a</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="n">都不行</span>
 </code></pre></div>
+<p>实参和形参可以一样也可以不一样</p>
+<p>二维数组形参规则和边定义边赋值的规则相同，行号可空心，列号不可空心，作形参时不管一维数组还是二维数组实际都是指针</p>
 
 
 
