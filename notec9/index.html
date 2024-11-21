@@ -16,7 +16,7 @@
         <link rel="prev" href="../notec8/">
       
       
-        <link rel="next" href="../pta/">
+        <link rel="next" href="../notec10/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>数组 - LH的资源小站</title>
+        <title>一维数组 - LH的资源小站</title>
       
     
     
@@ -156,7 +156,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              数组
+              一维数组
             
           </span>
         </div>
@@ -1755,7 +1755,7 @@
           
   
   <span class="md-ellipsis">
-    数组
+    一维数组
   </span>
   
 
@@ -1766,7 +1766,7 @@
         
   
   <span class="md-ellipsis">
-    数组
+    一维数组
   </span>
   
 
@@ -1827,6 +1827,13 @@
           <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     定义2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    定义3
   </a>
   
 </li>
@@ -1897,7 +1904,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3_1" class="md-nav__link">
     3.数组查找算法
   </a>
   
@@ -1920,6 +1927,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notec10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二维数组
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2780,6 +2807,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    定义3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#aa" class="md-nav__link">
     'A'与"A"区别
   </a>
@@ -2845,7 +2879,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3_1" class="md-nav__link">
     3.数组查找算法
   </a>
   
@@ -2879,7 +2913,7 @@
                   
 
 
-<h1 id="_1">数组（冬二周）</h1>
+<h1 id="_1">一维数组（冬二周）</h1>
 <h2 id="1">1.基本知识</h2>
 <h3 id="_2">定义注意点</h3>
 <p>C89不支持int a[n]的定义，方括号必须为常数</p>
@@ -2899,6 +2933,18 @@
 <h4 id="2">定义2</h4>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="w">   </span><span class="err">#</span><span class="n">注意必须是双引号</span><span class="err">，</span><span class="n">有隐藏</span><span class="sc">&#39;\0&#39;</span><span class="p">,</span><span class="n">所以s长度为6</span>
 </code></pre></div>
+<h4 id="3"><strong>定义3</strong></h4>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="n">gets</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</code></pre></div>
+<p>以下内容摘自<a href="http://cc.zju.edu.cn/bhh/question.htm">小白网页问题4</a>：</p>
+<blockquote>
+<p>Q:用scanf()的%s格式输入一个字符串跟用gets()输入一个字符串有什么区别？</p>
+<p>A:假定已定义数组char a[100]，那么scanf("%s", a)与gets(a)有以下区别： </p>
+<p>(1) 不输入具体内容直接敲回车时，scanf()会认为此回车是输入项之间的分隔符，故它会过滤掉此回车并继续等待用户输入非空白的内容；而gets(a)则会认为此回车标志着一行内容输入的结束，于是它会执行a[0]='\0';并返回。</p>
+<p>(2) 当输入一个含有空格的字符串如ABC xyz 123时，scanf()仅读取"ABC"并保存到a中，其中a[0]='A', a[1]='B', a[2]='C', a[3]='\0'，而把" xyz 123"以及回车符(即'\n')留在输入缓冲区中；gets(a)则会把回车前的所有字符全部保存到数组a中，同时丢弃回车符，此时数组a的内容为：a[0]='A', a[1]='B', a[2]='C', a[3]=' ', a[4]='x', a[5]='y', a[6]='z', a[7]=' ', a[8]='1', a[9]='2',a[10]='3', a[11]='\0'。 </p>
+<p>(3) 当输入一个不含空格的字符串如ABC时，scanf()会读取"ABC"并保存到a中，同时把回车符留在输入缓冲区中；gets(a)也会读取"ABC"并保存到a中，但它会把回车符丢弃，即不会把回车符留在输入缓冲区内。</p>
+</blockquote>
 <h4 id="aa">'A'与"A"区别</h4>
 <p>"A"由'A'和'\0'两个元素组成的字符串，而'A'为字符</p>
 <h4 id="_5">空串</h4>
@@ -2964,7 +3010,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>找到插入位置后移位，往后移位时要从后往前</p>
-<h2 id="3">3.数组查找算法</h2>
+<h2 id="3_1">3.数组查找算法</h2>
 <h3 id="_9">二分查找</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="o">=</span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span>
