@@ -24,7 +24,7 @@
     
     
       
-        <title>运算符和字符变量 - LH的资源小站</title>
+        <title>运算符、字符变量和基础语法 - LH的资源小站</title>
       
     
     
@@ -156,7 +156,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              运算符和字符变量
+              运算符、字符变量和基础语法
             
           </span>
         </div>
@@ -1719,7 +1719,7 @@
           
   
   <span class="md-ellipsis">
-    运算符和字符变量
+    运算符、字符变量和基础语法
   </span>
   
 
@@ -1730,7 +1730,7 @@
         
   
   <span class="md-ellipsis">
-    运算符和字符变量
+    运算符、字符变量和基础语法
   </span>
   
 
@@ -2832,7 +2832,7 @@
   
 
 
-<h1 id="_1">运算符、字符变量（秋六周）</h1>
+<h1 id="_1">运算符、字符变量和基础语法（秋六周）</h1>
 <h2 id="1">1.二进制运算符</h2>
 <h3 id="_2"><strong>&lt;&lt;     &gt;&gt;左移右移</strong></h3>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1112/2mi5es42.webp" /></p>
@@ -2875,6 +2875,16 @@
 <h2 id="4if-else">4.if-else</h2>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1112/ftcicqea.webp" /></p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1112/rtes3lky.webp" /></p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">gameover</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">player</span><span class="p">;</span>
+<span class="n">gameover</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">player</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">gameover</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;N&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">player</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;My turn&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;GAME OVER&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>与python中不同，if else是不跟据缩进配对的，直接就近配对，所以本题输入“N2”，输出“GAME OVER”</p>
 
 
 
