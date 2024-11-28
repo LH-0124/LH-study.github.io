@@ -16,7 +16,7 @@
         <link rel="prev" href="../notec9/">
       
       
-        <link rel="next" href="../pta/">
+        <link rel="next" href="../notec11/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -1921,8 +1921,43 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#strcpy" class="md-nav__link">
+    strcpy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puts" class="md-nav__link">
+    puts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strcat" class="md-nav__link">
+    strcat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strcmp" class="md-nav__link">
+    strcmp
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.一些算法
+  </a>
   
 </li>
       
@@ -1930,6 +1965,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notec11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    指针
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2605,7 +2660,7 @@
         
   
   <span class="md-ellipsis">
-    普化实验
+    普通化学实验（乙）
   </span>
   
 
@@ -2625,7 +2680,7 @@
         
   
   <span class="md-ellipsis">
-    大物实验
+    大学物理实验
   </span>
   
 
@@ -2917,8 +2972,43 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#strcpy" class="md-nav__link">
+    strcpy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puts" class="md-nav__link">
+    puts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strcat" class="md-nav__link">
+    strcat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strcmp" class="md-nav__link">
+    strcmp
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.一些算法
+  </a>
   
 </li>
       
@@ -2940,7 +3030,7 @@
   
 
 
-<h1 id="_1">字符串（冬二周+冬三周）</h1>
+<h1 id="_1">字符串（冬二周——冬四周）</h1>
 <h2 id="1">1.字符串基本知识</h2>
 <h3 id="1_1">定义1</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="sc">&#39;e&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;l&#39;</span><span class="p">,</span><span class="sc">&#39;o&#39;</span><span class="p">,</span><span class="sc">&#39;\0&#39;</span><span class="p">}</span>
@@ -3017,6 +3107,69 @@
 </code></pre></div>
 <p>实参和形参可以一样也可以不一样</p>
 <p>二维数组形参规则和边定义边赋值的规则相同，行号可空心，列号不可空心，作形参时不管一维数组还是二维数组实际都是指针</p>
+<h3 id="strcpy">strcpy</h3>
+<p>用于字符串复制</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;ABC&quot;</span><span class="p">,</span><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="n">strcpy</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
+</code></pre></div>
+<p>上述程序将a[0]到a[3]复制到b[0]和b[3]，复制的是'\0'及其左边的元素，这说明假如b[4]之后有其他元素（如b="0123456789"），输出b也只会输出ABC</p>
+<h3 id="puts">puts</h3>
+<div class="highlight"><pre><span></span><code><span class="n">puts</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+</code></pre></div>
+<p>等价于printf("%s\n",b)，注意自带回车</p>
+<h3 id="strcat">strcat</h3>
+<p>字符串连接</p>
+<div class="highlight"><pre><span></span><code><span class="n">strcat</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
+</code></pre></div>
+<p>把a拼接到b后面</p>
+<h3 id="strcmp">strcmp</h3>
+<p>字符串的比较</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="n">n</span><span class="o">=</span><span class="n">strcmp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+</code></pre></div>
+<p>两个字符串元素逐个比较，若a[i]和b[i]不相等，则输出此时a[i]-b[i]的值；若a[i]和b[i]相等，则比较下一个值，直到'\0'或a[i]与b[i]不相等。</p>
+<p>n&gt;0，a&gt;b；n=0， a=b；n&lt;0，a&lt;b</p>
+<p>在VC和DEVCPP中，strcmp会把大于0的结果转化成1，小于0的结果转换成-1，等于0则返回0</p>
+<p>在TC中，strcmp的值是最后那次减法的差</p>
+<p><strong>不能用关系运算符比较字符串的大小</strong></p>
+<h2 id="4">4.一些算法</h2>
+<p><strong>十进制转十六进制数（字符串%s格式输出）</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">1000</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">t</span><span class="p">[]</span><span class="o">=</span><span class="s">&quot;0123456789ABCDEF&quot;</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="k">do</span><span class="w">                   </span><span class="cm">/*统计位数或分解整数要用do-while，排除x==0的特殊情况*/</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">d</span><span class="o">=</span><span class="n">x</span><span class="o">%</span><span class="mi">16</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="n">d</span><span class="p">];</span><span class="w">       </span><span class="cm">/*查表实现添引号*/</span>
+<span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="o">/=</span><span class="mi">16</span><span class="p">;</span>
+<span class="p">}</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">!=</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+<span class="n">n</span><span class="o">=</span><span class="n">strlen</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">        </span><span class="cm">/*等价于n=i*/</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="mi">-1</span><span class="o">-</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="mi">-1</span><span class="o">-</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">printf</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">          </span><span class="cm">/*字符串可以直接输出*/</span>
+</code></pre></div>
+<p><strong>统计单词个数（有空格的单词，空格可能不只1个）</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">b</span><span class="o">=</span><span class="sc">&#39; &#39;</span><span class="p">,</span><span class="n">c</span><span class="p">;</span><span class="w">    </span><span class="cm">/*b表示before，初始化为空格相当于给字符串最左边加上一个空格*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
+<span class="n">gets</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="n">n</span><span class="o">=</span><span class="n">strlen</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="o">!=</span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="o">==</span><span class="sc">&#39; &#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="p">;</span><span class="w">                </span><span class="cm">/*迭代*/</span>
+<span class="p">}</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">cnt</span><span class="p">);</span>
+</code></pre></div>
 
 
 
