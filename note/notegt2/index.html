@@ -2081,73 +2081,19 @@
     离散型随机变量
   </a>
   
-    <nav class="md-nav" aria-label="离散型随机变量">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#0-1" class="md-nav__link">
-    0-1分布（两点分布）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二项分布
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    泊松分布
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     概率分布函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     连续型随机变量
   </a>
-  
-    <nav class="md-nav" aria-label="连续型随机变量">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    均匀分布
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    正态分布
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    指数分布
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3055,73 +3001,19 @@
     离散型随机变量
   </a>
   
-    <nav class="md-nav" aria-label="离散型随机变量">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#0-1" class="md-nav__link">
-    0-1分布（两点分布）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    二项分布
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    泊松分布
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     概率分布函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     连续型随机变量
   </a>
-  
-    <nav class="md-nav" aria-label="连续型随机变量">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    均匀分布
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    正态分布
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    指数分布
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3144,22 +3036,22 @@
 
 
 <h1 id="chapter-2">Chapter 2 随机变量及其概率分布</h1>
-<h2 id="_1"><strong>离散型随机变量</strong></h2>
-<h3 id="0-1"><strong>0-1分布（两点分布）</strong></h3>
-<div class="arithmatex">\[
-P(\{X=k\})=p^k(1-p)^{1-k},k=0,1.
-\]</div>
-<h3 id="_2"><strong>二项分布</strong></h3>
-<div class="arithmatex">\[
-P(\{X=k\})=C_n^kp^k(1-p)^{1-k},k=0,1,2,...,n.
-\]</div>
+<h2 id="_1">离散型随机变量</h2>
+<p><strong>0-1分布（两点分布）</strong>
+$$
+P({X=k})=p^k(1-p)^{1-k},k=0,1.
+$$</p>
+<p><strong>二项分布</strong>
+$$
+P({X=k})=C_n^kp^k(1-p)^{1-k},k=0,1,2,...,n.
+$$</p>
 <p>记为<span class="arithmatex">\(X\)</span>~<span class="arithmatex">\(B(n,p)\)</span></p>
-<h3 id="_3"><strong>泊松分布</strong></h3>
-<div class="arithmatex">\[
-P(\{X=k\})=\frac{e^{-\lambda}\lambda^k}{k!},k=0,1,2,...,
-\]</div>
+<p><strong>泊松分布</strong>
+$$
+P({X=k})=\frac{e^{-\lambda}\lambda^k}{k!},k=0,1,2,...,
+$$</p>
 <p>泊松分布有着非常广泛的应用。当n足够大，p充分小（一般要求p&lt;0.1）时，且np保持适当大小，参数为（n，p）的二项分布可用泊松分布近似描述，且<span class="arithmatex">\(\lambda=np\)</span></p>
-<h2 id="_4">概率分布函数</h2>
+<h2 id="_2">概率分布函数</h2>
 <p><strong>定义</strong>
 $$
 F(x)=P(X\le x)
@@ -3172,7 +3064,7 @@ $$
 <p>（1）<span class="arithmatex">\(F(x)\)</span>单调不减</p>
 <p>（2）<span class="arithmatex">\(F(-\infty)=0,F(+\infty)=1\)</span></p>
 <p>（3）<span class="arithmatex">\(F(x+0)=F(x)\)</span> ,即 <span class="arithmatex">\(F(x)\)</span>为右连续函数</p>
-<h2 id="_5">连续型随机变量</h2>
+<h2 id="_3">连续型随机变量</h2>
 <p><strong>定义</strong>
 $$
 F(x)=\int_{-\infty}^xf(t)dt,f(x)\ge0
@@ -3184,29 +3076,29 @@ $$
 <p>（3）<span class="arithmatex">\(P(x_1&lt;X\le x_2)=F(x_2)-F(x_1)=\int_{x_1}^{x_2}f(t)dt\)</span>​</p>
 <p>（4）<span class="arithmatex">\(P(X=a)=0\)</span>，连续型随机变量落在开区间和闭区间的概率相等。<strong>由此可得出重要结论：概率为0不一定是不可能事件，概率为1不一定是必然事件</strong></p>
 <p>（5）在<span class="arithmatex">\(f(x)\)</span>的连续点处，<span class="arithmatex">\(F'(x)=f(x)\)</span></p>
-<h3 id="_6"><strong>均匀分布</strong></h3>
-<div class="arithmatex">\[
+<p><strong>均匀分布</strong>
+$$
 f(x)=\begin{cases}
-\frac{1}{b-a} ,x \in(a,b)\\
+\frac{1}{b-a} ,x \in(a,b)\
 0,其他
 \end{cases}
-\]</div>
+$$</p>
 <p>称X服从区间<span class="arithmatex">\((a,b)\)</span>的均匀分布，记为<span class="arithmatex">\(X\)</span>~<span class="arithmatex">\(U(a,b)\)</span></p>
-<h3 id="_7"><strong>正态分布</strong></h3>
-<div class="arithmatex">\[
+<p><strong>正态分布</strong>
+$$
 f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-\]</div>
+$$</p>
 <p>称X服从参数为<span class="arithmatex">\((\mu,\sigma)\)</span>的正态分布，记为<span class="arithmatex">\(X\)</span>~<span class="arithmatex">\(N(\mu,\sigma^2)\)</span></p>
 <p><strong>性质</strong></p>
 <p>（1）<span class="arithmatex">\(\sigma\)</span>越大，曲线峰越低，越扁平；<span class="arithmatex">\(\sigma\)</span>越小，曲线峰越，越瘦</p>
 <p>（2）<span class="arithmatex">\(N(0,1)\)</span>为标准正态分布，分布函数<span class="arithmatex">\(\Phi(x)+\Phi(-x)=1\)</span>，普通的正态分布函数<span class="arithmatex">\(F(a)=\Phi(\frac{a-\mu}{\sigma})\)</span></p>
-<h3 id="_8"><strong>指数分布</strong></h3>
-<div class="arithmatex">\[
+<p><strong>指数分布</strong>
+$$
 f(x)=\begin{cases}
-\lambda e^{-\lambda x} ,  x&gt;0\\
+\lambda e^{-\lambda x} ,  x&gt;0\
 0 ,x \le 0
 \end{cases}
-\]</div>
+$$</p>
 <div class="arithmatex">\[
 F(x)=\begin{cases}
 1-e^{-\lambda x} ,  x&gt;0\\

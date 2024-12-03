@@ -3487,7 +3487,7 @@
 
 <h1 id="chapter-4">Chapter 4  随机变量的数字特征</h1>
 <h2 id="_1">数学期望</h2>
-<h3 id="_2"><strong>定义</strong></h3>
+<h3 id="_2">定义</h3>
 <p>离散型随机变量，若级数<span class="arithmatex">\(\overset{+\infty}{\underset{i=1}{\Sigma}}x_ip_i\)</span>绝对收敛，则称该级数为该随机变量的数学期望，记为
 $$
 E(X)=\overset{+\infty}{\underset{i=1}{\sum}}x_ip_i
@@ -3497,24 +3497,24 @@ $$
 $$
 E(X)=\int^{+\infty}_{-\infty}xf(x)dx
 $$</p>
-<h3 id="_3"><strong>泊松分布数学期望</strong></h3>
+<h3 id="_3">泊松分布数学期望</h3>
 <div class="arithmatex">\[
 E(X)=\lambda
 \]</div>
-<h3 id="_4"><strong>指数分布数学期望</strong></h3>
+<h3 id="_4">指数分布数学期望</h3>
 <div class="arithmatex">\[
 E(X)=\frac{1}{\lambda}
 \]</div>
-<h3 id="_5"><strong>正态分布数学期望</strong></h3>
+<h3 id="_5">正态分布数学期望</h3>
 <div class="arithmatex">\[
 E(X)=\mu
 \]</div>
-<h3 id="_6"><strong>均匀分布数学期望</strong></h3>
+<h3 id="_6">均匀分布数学期望</h3>
 <p><span class="arithmatex">\(X\)</span>~<span class="arithmatex">\(U(a,b)\)</span>
 $$
 E(X)=\frac{a+b}{2}
 $$</p>
-<h3 id="by"><strong>懒人公式（by 赵敏智老师）</strong></h3>
+<h3 id="by">懒人公式（by 赵敏智老师）</h3>
 <h4 id="_7">离散型</h4>
 <div class="arithmatex">\[
 E(g(X))=\overset{+\infty}{\underset{i=1}{\sum}}g(x_i)p_i
@@ -3531,44 +3531,44 @@ E(h(X,Y))=\overset{+\infty}{\underset{i=1}{\sum}}\overset{+\infty}{\underset{j=1
 <div class="arithmatex">\[
 E(h(X,Y))=\int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}h(x,y)f(x,y)dxdy
 \]</div>
-<h3 id="_11"><strong>数学期望性质</strong></h3>
+<h3 id="_11">数学期望性质</h3>
 <p>1.线性性：<span class="arithmatex">\(E(aX+b)=aE(X)+b\)</span></p>
 <p>2.可加性：<span class="arithmatex">\(E(X_1+X_2+...+X_n)=E(X_1)+E(X_2)+...+E(X_n)\)</span></p>
 <p>3.独立可乘性：<span class="arithmatex">\(X,Y\)</span>独立，<span class="arithmatex">\(E(XY)=E(X)E(Y)\)</span>，多变量同理</p>
 <h2 id="_12">方差</h2>
-<h3 id="_13"><strong>定义和计算</strong></h3>
+<h3 id="_13">定义和计算</h3>
 <div class="arithmatex">\[
 Var(X)=E[(X-E(X))^2]=E(X^2)-(E(X))^2
 \]</div>
-<h3 id="_14"><strong>泊松分布方差</strong></h3>
+<h3 id="_14">泊松分布方差</h3>
 <div class="arithmatex">\[
 Var(X)=\lambda
 \]</div>
-<h3 id="_15"><strong>指数分布方差</strong></h3>
+<h3 id="_15">指数分布方差</h3>
 <div class="arithmatex">\[
 Var(X)=\frac{1}{\lambda^2}
 \]</div>
-<h3 id="_16"><strong>二项分布方差</strong></h3>
+<h3 id="_16">二项分布方差</h3>
 <div class="arithmatex">\[
 Var(X)=np(1-p)
 \]</div>
-<h3 id="_17"><strong>均匀分布方差</strong></h3>
+<h3 id="_17">均匀分布方差</h3>
 <p><span class="arithmatex">\(X\)</span>~<span class="arithmatex">\(U(a,b)\)</span>
 $$
 Var(X)=\frac{(b-a)^2}{12}
 $$</p>
-<h3 id="_18"><strong>性质</strong></h3>
+<h3 id="_18">性质</h3>
 <p>1.<span class="arithmatex">\(Var(aX+b)=a^2Var(X)\)</span></p>
 <p>2.<span class="arithmatex">\(Var(X)\le E[(X-c)^2]\)</span>，当且仅当<span class="arithmatex">\(E(X)=c\)</span>时等号成立</p>
 <p>3.若<span class="arithmatex">\(Var(X)=0\)</span>，则<span class="arithmatex">\(X\)</span>恒为常数</p>
 <p>4.独立可加性：<span class="arithmatex">\(Var(X_1+X_2+...+X_n)=Var(X_1)+Var(X_2)+...+Var(X_n)\)</span></p>
 <p>5.<span class="arithmatex">\(Var(X+Y)=Var(X)+Var(Y)-Cov(X,Y)\)</span></p>
 <h2 id="_19">协方差</h2>
-<h3 id="_20"><strong>定义及计算</strong></h3>
+<h3 id="_20">定义及计算</h3>
 <div class="arithmatex">\[
 Cov(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y)
 \]</div>
-<h3 id="_21"><strong>性质</strong></h3>
+<h3 id="_21">性质</h3>
 <p>1.<span class="arithmatex">\(Cov(X,Y)=Cov(Y,X)\)</span></p>
 <p>2.<span class="arithmatex">\(Cov(X,X)=Var(X)\)</span></p>
 <p>3.<span class="arithmatex">\(Cov(aX,bY)=abCov(X,Y)\)</span></p>
@@ -3580,10 +3580,10 @@ Cov(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y)
 \rho_{XY}=\frac{Cov(X,Y)}{\sqrt{Var(X)}\sqrt{Var(Y)}}
 \]</div>
 <p>反映随机变量<span class="arithmatex">\(X,Y\)</span>的线性关系</p>
-<h3 id="_23"><strong>性质</strong></h3>
+<h3 id="_23">性质</h3>
 <p>1.若<span class="arithmatex">\(X,Y\)</span>独立，则相关系数<span class="arithmatex">\(\rho_{XY}=0\)</span>​，<strong>但反之不然</strong></p>
 <p>2.<span class="arithmatex">\(|\rho_{XY}|\le 1\)</span>，等号成立时<span class="arithmatex">\(X,Y\)</span>严格线性相关，为正时正相关，为负时负相关，为0时不相关</p>
-<h3 id="_24"><strong>注意</strong></h3>
+<h3 id="_24">注意</h3>
 <p>独立可以推出不相关，不相关不能推出独立</p>
 <p>不相关<span class="arithmatex">\(\rho_{XY}=0\)</span>可由以下条件等价：</p>
 <p>（1）<span class="arithmatex">\(Cov(X,Y)=0\)</span></p>
@@ -3596,18 +3596,18 @@ P(X&gt;\alpha)=\int_{x_\alpha}^{+\infty}f(x)dx=\alpha
 <p>则<span class="arithmatex">\(x_\alpha\)</span>为<span class="arithmatex">\(\alpha\)</span>分位数。</p>
 <p>对于偶函数（如标准正态分布），<span class="arithmatex">\(x_{\alpha}=-x_{1-\alpha}\)</span></p>
 <h2 id="_26">多维正态变量</h2>
-<h3 id="_27"><strong>协方差矩阵</strong></h3>
+<h3 id="_27">协方差矩阵</h3>
 <div class="arithmatex">\[
 Cov(\pmb{X})=(Cov(X_i,X_j))_{n×n}
 \]</div>
-<h3 id="_28"><strong>多维正态变量表示</strong></h3>
+<h3 id="_28">多维正态变量表示</h3>
 <p><span class="arithmatex">\(n\)</span>维随机变量<span class="arithmatex">\(\pmb{X}=(X_1,X_2,...,X_n)^{T}\)</span>，协方差矩阵<span class="arithmatex">\(\pmb{B}=Cov(\pmb{X})\)</span>，数学期望<span class="arithmatex">\(\pmb{a}=(E(X_1),E(X_2),...,E(X_n))^{T}\)</span>，则<span class="arithmatex">\(n\)</span>元正态分布记为<span class="arithmatex">\(X\sim N(\pmb{a},\pmb{B})\)</span></p>
 <p><span class="arithmatex">\(n=2\)</span>​时，协方差矩阵为：<span class="arithmatex">\(B=
 \begin{pmatrix}
 \sigma_1^2 &amp; \sigma_1\sigma_2\rho \\
 \sigma_1\sigma_2\rho &amp; \sigma_2^2 \\
 \end{pmatrix}\)</span></p>
-<h3 id="_29"><strong>性质</strong></h3>
+<h3 id="_29">性质</h3>
 <p>（1）<span class="arithmatex">\(n\)</span>维正态变量任意<span class="arithmatex">\(k\)</span>维子向量也服从<span class="arithmatex">\(k\)</span>元正态分布。特别地，<span class="arithmatex">\(n\)</span>维正态变量中的每个分量都服从一元正态分布。即联合正态能推导出每一个随机变量服从边际正态分布。</p>
 <p>（2）<span class="arithmatex">\(\pmb{X}=(X_1,X_2,...,X_n)^T\)</span>服从<span class="arithmatex">\(n\)</span>元正态分布的充要条件是各个分量的任意线性组合服从一元正态分布。</p>
 <p>（3）<span class="arithmatex">\(\pmb{X}=(X_1,X_2,...,X_n)^T\)</span>服从<span class="arithmatex">\(n\)</span>元正态分布，<span class="arithmatex">\(\pmb{Y}=(Y_1,Y_2,...,Y_k)^T\)</span>每个分量都是<span class="arithmatex">\(X\)</span>的线性函数，则<span class="arithmatex">\(\pmb{Y}\)</span>服从<span class="arithmatex">\(k\)</span>元正态分布。此性质称为“正态变量的<strong>线性变换不变性</strong>”</p>
