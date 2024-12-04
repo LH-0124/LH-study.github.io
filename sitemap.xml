@@ -26,17 +26,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://LH-study.github.io/experiment/%E5%A4%A7%E7%89%A9%E5%AE%9E%E9%AA%8C/</loc>
+         <loc>https://LH-study.github.io/experiment/about/</loc>
          <lastmod>2024-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://LH-study.github.io/experiment/%E6%99%AE%E5%8C%96%E5%AE%9E%E9%AA%8C/</loc>
+         <loc>https://LH-study.github.io/experiment/chemistry/</loc>
          <lastmod>2024-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://LH-study.github.io/experiment/%E7%94%B5%E8%B7%AF%E5%AE%9E%E9%AA%8C/</loc>
+         <loc>https://LH-study.github.io/experiment/electric1/</loc>
+         <lastmod>2024-12-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://LH-study.github.io/experiment/physics/</loc>
+         <lastmod>2024-12-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://LH-study.github.io/life/about/</loc>
          <lastmod>2024-12-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
