@@ -3217,7 +3217,8 @@
 <h2 id="1">1.变量的类型、取值范围、输入/输出格式</h2>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1111/hm4q3epf.webp" /></p>
 <p>char 以%c输出为字符，以%d输出为字符的ascall码十进制值</p>
-<p>unsigned表示非符号数，从0开始，最高位为<span class="arithmatex">\(2^n-1\)</span>​，n为变量的位数，unsigned类型可以用%u输入输出，unsigned long int 以%lu输入输出</p>
+<p>unsigned表示非符号数，从0开始，最高位为<span class="arithmatex">\(2^n-1\)</span>​​​，n为变量的位数，unsigned类型可以用%u输入输出，unsigned long int 以%lu输入输出</p>
+<p>double和float可以用%le和%e输入指数形式的浮点数，double可以用%e输出指数形式浮点数（小数点前有且仅有一位非零的数字）</p>
 <div class="admonition 注意">
 <p class="admonition-title">注意</p>
 <p>%d为有符号的整数格式，%u为无符号的整数格式</p>
@@ -3232,6 +3233,7 @@
 <p><strong>上述类型有些表达可以化简，如下：</strong></p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1111/w3jamigd.webp" /></p>
 <h2 id="2char">2.char类型字符变量</h2>
+<p>char类型既可以是字符也可以是char类型整数，分别对应%c和%d（或%o,%x）格式</p>
 <h3 id="ascii"><strong>了解ascII码</strong></h3>
 <p>'A'=65   'a'=97   '0'=30</p>
 <h3 id="getchar"><strong>getchar()函数</strong></h3>
@@ -3270,6 +3272,7 @@
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1111/osj11bjk.webp" /></p>
 <p><strong>0x开头为十六进制int常数</strong></p>
 <p><strong>0开头为八进制int常数</strong></p>
+<p>后缀l或L表示long型常量，后缀u或U表示unsigned型常量，后缀lu或LU表示unsigned long型常量</p>
 <h2 id="5">5.小数类型常数格式</h2>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1111/ttlp3iho.webp" /></p>
 <h2 id="6">6.字符转化</h2>

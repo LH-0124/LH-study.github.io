@@ -1890,14 +1890,14 @@
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    3.符号扩充与零扩充
+    3.强制类型转换
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    4.符号数移位注意点
+    4.符号扩充与零扩充
   </a>
   
 </li>
@@ -2977,14 +2977,14 @@
       
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    3.符号扩充与零扩充
+    3.强制类型转换
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    4.符号数移位注意点
+    4.符号扩充与零扩充
   </a>
   
 </li>
@@ -3026,16 +3026,17 @@
 <p>a实际的赋值是1.0</p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1107/ayvmzv2z.webp" /></p>
 <p>大类型转换成小类型会造成结果不准确</p>
-<h2 id="3">3.符号扩充与零扩充</h2>
+<h2 id="3">3.强制类型转换</h2>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">类型名</span><span class="p">)</span><span class="w">   </span><span class="n">表达式</span><span class="p">;</span>
+</code></pre></div>
+<p>优先级较高，(int)3.8+1.3的值是4.3，(int)(3.8+1.3)的值才是5</p>
+<h2 id="4">4.符号扩充与零扩充</h2>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1107/bzymnnjz.webp" /></p>
 <p>简单概括来讲，符号数扩充就是在高位扩充与原来的数最高位相同的数，即正数补0，负数补1</p>
 <p>在运算后通过转换数据类型，遵从右对齐原则</p>
 <p>例如</p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1107/h3ndpmfh.webp" /></p>
 <p>本例中若c类型为char，c将会=0</p>
-<h2 id="4">4.符号数移位注意点</h2>
-<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1107/dpyvehum.webp" /></p>
-<p>符号数在移位时，负数右移高位补1</p>
 
 
 
