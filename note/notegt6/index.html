@@ -3213,11 +3213,12 @@
 <div class="arithmatex">\[
 \overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_i
 \]</div>
-<p>所有样本均值的平均值恰好是总体均值，<span class="arithmatex">\(E(\overline{X})=\mu,Var(\overline{X}=\frac{\sigma^2}{n})\)</span></p>
+<p>所有样本均值的平均值恰好是总体均值，<span class="arithmatex">\(E(\overline{X})=\mu,Var(\overline{X})=\frac{\sigma^2}{n}\)</span></p>
 <h3 id="_3">样本方差</h3>
 <div class="arithmatex">\[
 S^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2
 \]</div>
+<p><span class="arithmatex">\(E(S^2)=\sigma^2\)</span></p>
 <h3 id="k">样本<span class="arithmatex">\(k\)</span>阶（原点）矩</h3>
 <div class="arithmatex">\[
 A_k=\frac{1}{n}\sum_{i=1}^{n}X_i^k,   k=1,2,...
@@ -3227,6 +3228,7 @@ A_k=\frac{1}{n}\sum_{i=1}^{n}X_i^k,   k=1,2,...
 B_k=\frac{1}{n}\sum_{i=1}^{n}(X_i-\overline{X})^k,k=2,3,...
 \]</div>
 <p>样本二阶中心矩可以估计样本方差，但不是无偏估计</p>
+<p><span class="arithmatex">\(E(B_2)=\frac{n-1}{n}\sigma^2\)</span></p>
 <h2 id="chi2tf"><span class="arithmatex">\(\chi^2\)</span>分布，<span class="arithmatex">\(t\)</span>分布，<span class="arithmatex">\(F\)</span>分布</h2>
 <h3 id="chi2"><span class="arithmatex">\(\chi^2\)</span>分布</h3>
 <p>​   设<span class="arithmatex">\(X_1,X_2,\ldots,X_n\)</span>为独立同分布的随机变量，且都服从标准正态分布<span class="arithmatex">\(N(0,1)\)</span>
@@ -3266,33 +3268,39 @@ $$
 <ol>
 <li>若<span class="arithmatex">\(F\sim F(n1,n2)\)</span>，则<span class="arithmatex">\(1/{F}\sim F(n2,n1)\)</span>  </li>
 <li>若<span class="arithmatex">\(X\sim t(n)\)</span>，则<span class="arithmatex">\(X^2\sim F(1,n)\)</span></li>
-<li><span class="arithmatex">\(F_{1-\alpha}(n1,n2)=\frac{1}{F_\alpha(n2,n1)}\)</span></li>
+<li><span class="arithmatex">\(F_{\alpha}(n1,n2)=\frac{1}{F_{1-\alpha}(n2,n1)}\)</span></li>
 </ol>
 <h2 id="_4">正态总体的抽样分布定理</h2>
 <h3 id="_5">单个正态总体的抽样分布</h3>
-<p>​   设<span class="arithmatex">\(X_1,X_2,\ldots,X_n\)</span>是来自正态分布总体<span class="arithmatex">\(N(\mu,\sigma^2)\)</span>的简单随机样本，<span class="arithmatex">\(\bar X\)</span>是样本均值，<span class="arithmatex">\(S^2\)</span>​是样本方差，则</p>
+<p>​   设<span class="arithmatex">\(X_1,X_2,\ldots,X_n\)</span>是来自正态分布总体<span class="arithmatex">\(N(\mu,\sigma^2)\)</span>的简单随机样本，<span class="arithmatex">\(\overline X\)</span>是样本均值，<span class="arithmatex">\(S^2\)</span>​是样本方差，则</p>
 <ol>
 <li>
-<p><span class="arithmatex">\(\overline{X}\sim N(\mu,\frac{\sigma^2}{n})\)</span></p>
+<p><span class="arithmatex">\(\overline{X}\sim N(\mu,\frac{\sigma^2}{n})\)</span>，该结论不需要正态分布，独立同分布也成立</p>
 </li>
 <li>
-<p><span class="arithmatex">\(\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)\)</span>，<strong>注意区分：</strong><span class="arithmatex">\(\frac{\sum_{i=1}^n(X_i-\mu)^2}{\sigma^2}\sim \chi(n)\)</span>和<span class="arithmatex">\(\frac{\sum_{i=1}^n(X_i-\overline{X})^2}{\sigma^2}\sim \chi(n-1)\)</span></p>
+<p><span class="arithmatex">\(E(S^2)=\sigma^2,Var(S^2)=\frac{2\sigma^4}{n-1}\)</span></p>
 </li>
 <li>
-<p><span class="arithmatex">\(\bar X与S^2\)</span>​相互独立  </p>
+<p><span class="arithmatex">\(\frac{\sum_{i=1}^n(X_i-\overline{X})^2}{\sigma^2}=\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)\)</span></p>
+</li>
+</ol>
+<p><strong>注意区分：</strong><span class="arithmatex">\(\frac{\sum_{i=1}^n(X_i-\mu)^2}{\sigma^2}\sim \chi^2(n)\)</span>和<span class="arithmatex">\(\frac{\sum_{i=1}^n(X_i-\overline{X})^2}{\sigma^2}\sim \chi^2(n-1)\)</span></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\overline X与S^2\)</span>​相互独立  </p>
 </li>
 <li>
 <p><span class="arithmatex">\(\frac{\bar X-\mu}{S/\sqrt{n}}\sim t(n-1)\)</span></p>
 </li>
 </ol>
 <h3 id="_6">两个正态总体的抽样分布</h3>
-<p>​   设<span class="arithmatex">\(X_1,X_2,\ldots,X_{n1}\)</span>是来自正态分布总体<span class="arithmatex">\(N_1(\mu_1,\sigma^2_1)\)</span>的简单随机样本,<span class="arithmatex">\(Y_1,Y_2,\ldots,Y_{n2}\)</span>是来自正态分布总体<span class="arithmatex">\(N_2(\mu_2,\sigma^2_2)\)</span>的简单随机样本,样本相互独立<span class="arithmatex">\(\bar X,\bar Y\)</span>是样本均值，<span class="arithmatex">\(S_1^2,S_2^2\)</span>​是样本方差，则</p>
+<p>​   设<span class="arithmatex">\(X_1,X_2,\ldots,X_{n1}\)</span>是来自正态分布总体<span class="arithmatex">\(N_1(\mu_1,\sigma^2_1)\)</span>的简单随机样本，<span class="arithmatex">\(Y_1,Y_2,\ldots,Y_{n2}\)</span>是来自正态分布总体<span class="arithmatex">\(N_2(\mu_2,\sigma^2_2)\)</span>的简单随机样本，样本相互独立，<span class="arithmatex">\(\overline X,\overline Y\)</span>是样本均值，<span class="arithmatex">\(S_1^2,S_2^2\)</span>​是样本方差，则</p>
 <ol>
 <li>
 <p><span class="arithmatex">\(\frac{S^2_1/\sigma^2_1}{S_2^2/\sigma^2_2}\sim F(n1-1,n2-1)\)</span>​</p>
 </li>
 <li>
-<p><span class="arithmatex">\(\overline{X}-\overline{Y}\sim N(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2})\)</span></p>
+<p><span class="arithmatex">\(\overline{X}-\overline{Y}\sim N(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2})\)</span>，<span class="arithmatex">\(\frac{(\overline X-\overline Y)-(\mu_1-\mu_2) }{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1)\)</span></p>
 </li>
 <li>
 <p>若<span class="arithmatex">\(\sigma_1^2=\sigma_2^2=\sigma^2\)</span>,
