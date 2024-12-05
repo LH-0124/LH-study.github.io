@@ -3360,7 +3360,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">函数类型</span><span class="w">   </span><span class="n">函数名</span><span class="err">（</span><span class="n">参数类型</span><span class="w">  </span><span class="n">参数表</span><span class="err">）</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="9">9.局部变量和全局变量</h2>
-<p>C语言把定义在函数内部的变量称为局部变量，各函数之间内部的变量独立，不会相互干扰。</p>
+<p>C语言把定义在函数内部的变量称为局部变量，各函数之间内部的变量独立，不会相互干扰。不同函数之间可以存在同名变量，但函数内部之间也不会相互影响</p>
 <p>C语言把定义在函数外而不属于任何函数的变量称为全局变量，全局变量的作用范围是从定义开始到程序所在文件的结束，它对作用范围内所有函数都起作用。全局变量一般定义在第一个函数的前面。</p>
 <p>全局变量和局部变量允许同名，当函数局部变量和全局变量同名，在<strong>该函数中</strong>全局变量不起作用，局部变量起作用。对于其他不存在同名变量的函数，局部变量依然有效。当函数局部变量与复合语句的局部变量同名时，以复合语句为准。</p>
 <p><strong>静态局部变量</strong></p>

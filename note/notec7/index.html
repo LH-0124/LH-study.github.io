@@ -1952,7 +1952,103 @@
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    2.指针基本知识
+    2.指针运算
+  </a>
+  
+    <nav class="md-nav" aria-label="2.指针运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    赋值时类型不匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    对p++的理解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指针减法运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    指针与指针的比较
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    指针合法运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    指针的宽度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.与指针相关三个概念
+  </a>
+  
+    <nav class="md-nav" aria-label="3.与指针相关三个概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    野指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    空指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    通用指针
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.指针作为函数的参数
   </a>
   
 </li>
@@ -3005,7 +3101,103 @@
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    2.指针基本知识
+    2.指针运算
+  </a>
+  
+    <nav class="md-nav" aria-label="2.指针运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    赋值时类型不匹配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    对p++的理解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指针减法运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    指针与指针的比较
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    指针合法运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    指针的宽度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.与指针相关三个概念
+  </a>
+  
+    <nav class="md-nav" aria-label="3.与指针相关三个概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    野指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    空指针
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    通用指针
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.指针作为函数的参数
   </a>
   
 </li>
@@ -3028,7 +3220,7 @@
   
 
 
-<h1 id="_1">指针（冬四周）</h1>
+<h1 id="_1">指针（冬四周+冬五周）</h1>
 <h2 id="1">1.地址</h2>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1128/rovb3fl5.webp" /></p>
 <p>任何一个变量一定具备以下两个属性：地址和值。</p>
@@ -3040,16 +3232,21 @@
 </div>
 <p><strong>当变量跨越多个地址时，其整体地址等价为最小的地址。</strong></p>
 <p>若一个地址指向多个变量，需要引入指针的类型</p>
-<p><strong>小端存储原则</strong>：如对于y这样宽度大于1个字节的变量存放到内存中时，先存储低8位，再存储高8位。</p>
+<p><strong>小端存储原则</strong>：如对于y这样宽度大于1个字节的变量存放到内存中时，先存储低8位（一个字节），再存储高8位。例如，若short int  a=0x09，则a占用两个地址，第一个地址存放0x09，第二个地址存放0x00</p>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mh">0x78</span><span class="p">;</span>
 <span class="kt">short</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mh">0x5678</span><span class="p">;</span>
 <span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="o">=</span><span class="mh">0x12345678</span><span class="p">;</span>
 </code></pre></div>
-<h2 id="2">2.指针基本知识</h2>
+<h2 id="2">2.指针运算</h2>
+<h3 id="_2">赋值</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mh">0x78</span><span class="p">;</span>
 <span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
 </code></pre></div>
 <p>p是一个指针变量，它指向一个char，这里的*可以理解成一个向左的箭头←</p>
+<p>定义多个指针时，*不能共享，只属于离他最近的变量</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="o">*</span><span class="n">q</span><span class="p">;</span><span class="w">           </span><span class="cm">/*q类型为int类型指针*/</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">;</span><span class="w">            </span><span class="cm">/*q类型为int*/</span>
+</code></pre></div>
 <p>变量p的类型是char *，表示p指向的对象的类型是char</p>
 <div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
 </code></pre></div>
@@ -3071,6 +3268,85 @@
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;p=%p,*p=%c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
 </code></pre></div>
 <p>%p用来输入或输出指针或地址的值，输出地址时实际为%X（16进制）的格式</p>
+<h3 id="_3">赋值时类型不匹配</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="mh">0x12345678</span><span class="p">;</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">;</span>
+</code></pre></div>
+<p>指针类型和数据类型不匹配，程序会报错，必须进行强制类型转换</p>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1205/f35e1bgw.webp" /></p>
+<p>本例中指针类型大于数据类型，转换时直接把4个char类型数组元素变成一个long类型元素赋值给p，因此p指向0x12345678。</p>
+<h3 id="p">对p++的理解</h3>
+<p>数组中p+1并不代表一定地址加了1，因为一个变量可能占用多个内存地址。p+1的本质是跳到下一个元素</p>
+<p>若p指向第0个元素，那么p+i指向第i个同类型的元素</p>
+<p>计算公式如下：</p>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="_4">指针减法运算</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="o">*</span><span class="n">q</span><span class="p">;</span>
+</code></pre></div>
+<p>q-p表示这两个指针指向的对象之间相差几个元素</p>
+<p>计算公式如下：</p>
+<div class="highlight"><pre><span></span><code><span class="n">q</span><span class="o">-</span><span class="n">p</span><span class="o">=</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">q</span><span class="o">-</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="_5">指针与指针的比较</h3>
+<p>可以做大小比较的逻辑运算</p>
+<h3 id="_6">指针合法运算</h3>
+<p>（1）p+i  指针加减一个整数</p>
+<p>（2）q-p  指针减法</p>
+<p>（3）q&gt;p  指针比较</p>
+<h3 id="_7">指针的宽度</h3>
+<p>sizeof(指针类型)</p>
+<p>在64位VC以及PTA内的gcc中=8</p>
+<div class="highlight"><pre><span></span><code><span class="k">sizeof</span><span class="w">  </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">==</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="w">  </span><span class="o">*</span><span class="p">);</span>
+</code></pre></div>
+<p>所有指针类型的宽度都是一致的</p>
+<h2 id="3">3.与指针相关三个概念</h2>
+<h3 id="_8">野指针</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="n">b</span><span class="o">=*</span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
+<p>p没有先赋值，称为野指针，要避免这种情况发生，否则可能会覆盖其他变量。</p>
+<p>引用*p前，先确保对p本身赋值</p>
+<h3 id="_9">空指针</h3>
+<p>p=0时，称p是空指针，空指针即是0地址</p>
+<p>在C语言中，0地址对应的内存单元不能存放任何对象</p>
+<p>当p=0时，p所指向的对象不存在</p>
+<h3 id="_10">通用指针</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
+<p>上述定义的指针为通用指针</p>
+<p>void表示无类型，它不能用来定义一个变量</p>
+<p>void函数类型表示没有返回变量</p>
+<p>void可以放在函数的形参内，表示该函数没有参数，调用时不要写参数，直接写f()</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="mh">0x12345678</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="p">;</span>
+<span class="n">p</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">;</span>
+<span class="n">q</span><span class="o">=</span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
+<p>上述代码中：</p>
+<p>（1）p起到了万能容器的作用，它可以接受任何类型指针的赋值。</p>
+<p>（2）p起到了万能赋值者的作用，它可以赋值给任何类型的指针变量。</p>
+<p>任何时候都不能引用*p，因为p所指向的对象没有类型。</p>
+<h2 id="4">4.指针作为函数的参数</h2>
+<p><strong>地址传递方式</strong></p>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1205/vqivsc3r.webp" /></p>
+<p>p赋值为变量a的地址，*p表示p指向的变量，为a</p>
+<p>*p+=1，a也会加1</p>
+<p><strong>值传递</strong></p>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1205/0ppp2ctl.webp" /></p>
+<p>两个变量a虽然同名，但是属于两个不同函数，互不影响，在f里面对a++不影响main函数的a</p>
+<p>数组作为函数的参数的本质是地址传递</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</code></pre></div>
+<p>int *a是int a[]的本质</p>
+<p>实参a[]的本质是a[0]的地址，一维数组a和a[0]的地址存在等价关系</p>
+<p>int *p是int p[]的本质，指针[i]表示指向该指针指向的第i个元素</p>
+<p>p[i]等价于*(p+i)</p>
 
 
 
