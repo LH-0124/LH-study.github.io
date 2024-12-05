@@ -3273,7 +3273,12 @@
 <span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
 <span class="n">p</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">;</span>
 </code></pre></div>
-<p>指针类型和数据类型不匹配，程序会报错，必须进行强制类型转换</p>
+<p>指针类型和数据类型不匹配，程序会报错，必须进行强制类型转换。最好不要省略unsigned，否则可能会进行扩充。</p>
+<div class="highlight"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="mh">0x12345678</span><span class="p">;</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span><span class="o">=</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+</code></pre></div>
+<p>本例中指针类型小于数据类型，强制类型转换时实际上只有a变量的低8位（char类型2字节）的地址赋值给p，所以p指针实际指向的值是0x78。</p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1205/f35e1bgw.webp" /></p>
 <p>本例中指针类型大于数据类型，转换时直接把4个char类型数组元素变成一个long类型元素赋值给p，因此p指向0x12345678。</p>
 <h3 id="p">对p++的理解</h3>
@@ -3344,7 +3349,7 @@
 <span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
 <p>int *a是int a[]的本质</p>
-<p>实参a[]的本质是a[0]的地址，一维数组a和a[0]的地址存在等价关系</p>
+<p>实参a[]的本质是a[0]的地址（&amp;a[0]），一维数组a和a[0]的地址存在等价关系</p>
 <p>int *p是int p[]的本质，指针[i]表示指向该指针指向的第i个元素</p>
 <p>p[i]等价于*(p+i)</p>
 
