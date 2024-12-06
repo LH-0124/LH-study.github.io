@@ -3303,6 +3303,7 @@
 <p>(2) 当输入一个含有空格的字符串如ABC xyz 123时，scanf()仅读取"ABC"并保存到a中，其中a[0]='A', a[1]='B', a[2]='C', a[3]='\0'，而把" xyz 123"以及回车符(即'\n')留在输入缓冲区中；gets(a)则会把回车前的所有字符全部保存到数组a中，同时丢弃回车符，此时数组a的内容为：a[0]='A', a[1]='B', a[2]='C', a[3]=' ', a[4]='x', a[5]='y', a[6]='z', a[7]=' ', a[8]='1', a[9]='2',a[10]='3', a[11]='\0'。 </p>
 <p>(3) 当输入一个不含空格的字符串如ABC时，scanf()会读取"ABC"并保存到a中，同时把回车符留在输入缓冲区中；gets(a)也会读取"ABC"并保存到a中，但它会把回车符丢弃，即不会把回车符留在输入缓冲区内。</p>
 </blockquote>
+<p>gets()有返回值，返回字符串第一个字符的地址，输入失败返回NULL</p>
 <h3 id="_3">循环遍历输入</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">x</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
@@ -3343,10 +3344,12 @@
 <span class="n">strcpy</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
 </code></pre></div>
 <p>上述程序将a[0]到a[3]复制到b[0]和b[3]，复制的是'\0'及其左边的元素，这说明假如b[4]之后有其他元素（如b="0123456789"），输出b也只会输出ABC</p>
+<p>不允许用加法运算直接拼接</p>
 <h3 id="puts">puts</h3>
 <div class="highlight"><pre><span></span><code><span class="n">puts</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
 </code></pre></div>
 <p>等价于printf("%s\n",b)，注意自带回车</p>
+<p>有返回值，输出成功返回'\n'，输出失败返回EOF</p>
 <h3 id="strcat">strcat</h3>
 <p>字符串连接</p>
 <div class="highlight"><pre><span></span><code><span class="n">strcat</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
