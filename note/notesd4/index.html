@@ -3128,6 +3128,157 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1.结构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.分类
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3.分析方法
+  </a>
+  
+    <nav class="md-nav" aria-label="3.分析方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    同步时序电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    异步时序电路
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.设计方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.计数器
+  </a>
+  
+    <nav class="md-nav" aria-label="5.计数器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    同步二进制加法计数器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    同步二进制减法计数器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    异步二进制计数器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    规律
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.寄存器
+  </a>
+  
+    <nav class="md-nav" aria-label="6.寄存器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    数码寄存器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    移位寄存器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7.移位寄存器计数器
+  </a>
+  
+    <nav class="md-nav" aria-label="7.移位寄存器计数器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    环形计数器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    扭环形计数器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3145,6 +3296,60 @@
 
 
 <h1 id="_1">基本时序逻辑电路</h1>
+<h2 id="1">1.结构</h2>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/emldanxl.webp" /></p>
+<h2 id="2">2.分类</h2>
+<p>时序逻辑电路按触发方式，可以分为<strong>同步时序电路</strong>和<strong>异步时序电路</strong>两类。</p>
+<p>时序电路中的触发器一般选用边沿触发方式。</p>
+<p>同步时序电路中所有触发器的CP脉冲连在一起，因此所有触发器在同一时钟边沿下工作。</p>
+<p>异步时序电路中，触发器的工作有先有后，肯定会产生过渡状态（毛刺），但异步时序电路的设计简单、灵活。</p>
+<h2 id="3">3.分析方法</h2>
+<h3 id="_2">同步时序电路</h3>
+<p>① 写出各触发器的驱动方程和电路的输出方程；</p>
+<p>② 列出完整的状态真值表；</p>
+<p>在列真值表时，可以先写出JK触发器JK的值，再根据JK触发器的状态转换图确定次态；也可以直接根据触发方程确定次态，推荐后者</p>
+<p><strong>真值表要包含所有状态</strong></p>
+<p>③ 状态真值表转换成状态转换图；</p>
+<p><strong>状态转换图要包含所有状态</strong></p>
+<p>④ 根据状态转换图总结出电路的逻辑功能。</p>
+<p>分析逻辑功能答题时：要写出几进制（模）、编码类型（BCD码、余3码）、能否自启动</p>
+<h3 id="_3">异步时序电路</h3>
+<p>异步时序逻辑电路中各触发器的CP脉冲不是同一个触发脉冲，为此各触发器不是同一时刻触发，因</p>
+<p>此分析异步时序电路时要特别注意有无时钟脉冲。</p>
+<p>① 写出驱动方程、时钟方程和电路的输出方程；</p>
+<p>② 列出完整的状态真值表；</p>
+<p>③ 状态真值表转换成状态转换图；</p>
+<p>④ 总结出电路的逻辑功能。</p>
+<h2 id="4">4.设计方法</h2>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/bmxzatfy.webp" /></p>
+<p>根据真值表求JK的驱动方程，也有两种方法。</p>
+<p>①根据JK的状态转换图，写出JK每一个状态的值，对JK分别画卡诺图化简。<strong>此方法过程计算复杂，但不会出错</strong></p>
+<p>②根据次态<span class="arithmatex">\(Q^{n+1}\)</span>在各状态的值，列出<span class="arithmatex">\(Q^{n+1}\)</span>的卡诺图，再根据<span class="arithmatex">\(Q^{n+1}=J\overline{Q^n}+\overline{K}Q^n\)</span>，确定JK。<strong>此方法虽然计算简单，但是实际在卡诺图化简时要留意不能消去<span class="arithmatex">\(Q^n\)</span>，所以包围圈不一定要最大，容易出错。</strong></p>
+<h2 id="5">5.计数器</h2>
+<h3 id="_4">同步二进制加法计数器</h3>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/ryjyuyoh.webp" /></p>
+<p>n位二进制计数器需要n个触发器，模<span class="arithmatex">\(N＝2^n\)</span>​ ，最大分频系数为N。</p>
+<h3 id="_5">同步二进制减法计数器</h3>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/sfmac1bg.webp" /></p>
+<h3 id="_6">异步二进制计数器</h3>
+<p>异步计数器的CP脉冲不连在一起，说明各触发器的触发时间不同，翻转也不同时发生。<strong>通常将触发器连接成T' 触发器，且将低位触发器的输出作为高位触发器的CP脉冲。</strong></p>
+<h3 id="_7">规律</h3>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/hgtvsf4a.webp" /></p>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/lffhvbpz.webp" /></p>
+<h2 id="6">6.寄存器</h2>
+<h3 id="_8">数码寄存器</h3>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/12viotqy.webp" /></p>
+<h3 id="_9">移位寄存器</h3>
+<p>保存二进制信息，实现数据的串行或并行传递。</p>
+<p>对存入的信息在时钟脉冲的作用下进行移位操作。</p>
+<p>实现数据的串行-并行或并行-串行之间的转换 。</p>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/tzqctoex.webp" /></p>
+<h2 id="7">7.移位寄存器计数器</h2>
+<h3 id="_10">环形计数器</h3>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/fsewc2wc.webp" /></p>
+<p>低位接到高位，为循环右移；高位接到低位，为循环左移</p>
+<h3 id="_11">扭环形计数器</h3>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1209/oppy01df.webp" /></p>
 
 
 
