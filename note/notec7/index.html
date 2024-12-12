@@ -16,7 +16,7 @@
         <link rel="prev" href="../notec6/">
       
       
-        <link rel="next" href="../notec8/">
+        <link rel="next" href="../notec9/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -2073,10 +2073,98 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.一维数组与指针的关系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.数组指针
+  </a>
+  
+    <nav class="md-nav" aria-label="6.数组指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    数组指针运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    二维数组作为函数参数本质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7.指针数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.指针的指针
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    9.指针和字符串的关系
+  </a>
+  
+    <nav class="md-nav" aria-label="9.指针和字符串的关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puts" class="md-nav__link">
+    puts()本质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notec9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第8讲 结构类型变量
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3484,6 +3572,74 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5.一维数组与指针的关系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.数组指针
+  </a>
+  
+    <nav class="md-nav" aria-label="6.数组指针">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    数组指针运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    二维数组作为函数参数本质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7.指针数组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.指针的指针
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    9.指针和字符串的关系
+  </a>
+  
+    <nav class="md-nav" aria-label="9.指针和字符串的关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puts" class="md-nav__link">
+    puts()本质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3502,7 +3658,7 @@
   
 
 
-<h1 id="_1">指针（冬四周+冬五周）</h1>
+<h1 id="_1">指针（冬四周——冬六周）</h1>
 <h2 id="1">1.地址</h2>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1128/rovb3fl5.webp" /></p>
 <p>任何一个变量一定具备以下两个属性：地址和值。</p>
@@ -3631,15 +3787,115 @@
 <p><strong>值传递</strong></p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1205/0ppp2ctl.webp" /></p>
 <p>两个变量a虽然同名，但是属于两个不同函数，互不影响，在f里面对a++不影响main函数的a</p>
+<h2 id="5">5.一维数组与指针的关系</h2>
 <p>数组作为函数的参数的本质是地址传递</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[],</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
 <p>int *a是int a[]的本质</p>
+<div class="highlight"><pre><span></span><code><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">等价于f</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
 <p>实参a[]的本质是a[0]的地址（&amp;a[0]），一维数组a和a[0]的地址存在等价关系</p>
-<p>int *p是int p[]的本质，指针[i]表示指向该指针指向的第i个元素</p>
-<p>p[i]等价于*(p+i)</p>
+<p>int *p是int p[]的本质。当p为指针变量时，p[i]表示指向该指针p指向的第i个元素，p[0]是p当前指向的元素</p>
+<p>p[i]等价于*(p+i)，用一维数组做函数的参数是地址传递</p>
 <p>数组是一个指针常量，不是变量，不能赋值或作类似a++的运算，地址不能改变</p>
+<h2 id="6">6.数组指针</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">23</span><span class="p">}</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w">    </span><span class="n">也可以写成int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span><span class="err">；</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="p">;</span>
+<span class="n">p</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">q</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</code></pre></div>
+<p>p指向a[0]这个一维数组，他的地址为a[0] [0]的地址，故p==q</p>
+<p>p是数组指针，它指向了一个一维数组</p>
+<h3 id="_13">数组指针运算</h3>
+<p>p+i表示p所指向的第i个元素，为a[i]</p>
+<p>p[i]表示*(p+i)，为a[i]，所以p[i] [j]的值为a[i] [j]</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">))[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w">   </span><span class="o">**</span><span class="n">注意</span><span class="p">[]</span><span class="n">优先级比</span><span class="w"> </span><span class="o">*</span><span class="n">高</span><span class="err">，</span><span class="n">所以要有括号</span><span class="o">**</span>
+<span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">)</span><span class="o">==</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">例子</p>
+<ul>
+<li>
+<p>① * (p[2]+1)=  * (a[2]+1) = * (&amp;a[2] [0]+1) = a[2] [1] = 21</p>
+<p>② * ( *(p+2)+3)= * (a[2]+3) = * (&amp;a[2] [0]+3)=a[2] [3] = 23</p>
+</li>
+</ul>
+</div>
+<h3 id="_14">二维数组作为函数参数本质</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">23</span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">[][</span><span class="mi">4</span><span class="p">],</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">p</span><span class="p">[</span><span class="n">r</span><span class="mi">-1</span><span class="p">][</span><span class="n">c</span><span class="mi">-1</span><span class="p">]</span><span class="o">*=</span><span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>形参p[] [4]等价于int (*p)[4]</p>
+<p>实参a等价于&amp;a[0]，二维数组的名字等价于该数组首行的地址</p>
+<p>传递方式也是地址传递，传递后p指向a[0]</p>
+<h2 id="7">7.指针数组</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">r</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</code></pre></div>
+<p>[]优先级较高，r[]表示r为数组，前面星号表示数组存放的变量类型为指针</p>
+<h2 id="8">8.指针的指针</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">t</span><span class="p">;</span>
+<span class="n">t</span><span class="o">=&amp;</span><span class="n">q</span><span class="p">;</span>
+</code></pre></div>
+<p>t指向指针q，指针q指向变量a</p>
+<p>要获得变量a，可以用**t</p>
+<p><strong>一个例子：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">**</span><span class="n">a</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">**&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
+<h2 id="9">9.指针和字符串的关系</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="s">&quot;XYZ&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>p指向该字符数组首元素的地址，等价于char *p = &amp;"XYZ"[0]，先存放"XYZ"，再赋值指针p</p>
+<p>字符数组的本质也是首元素的地址，或指向首元素的指针</p>
+<h3 id="puts">puts()本质</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">puts</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="o">!=</span><span class="sc">&#39;\0&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">putchar</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
+<span class="w">        </span><span class="n">p</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">putchar</span><span class="p">(</span><span class="sc">&#39;\n&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;ABC&quot;</span><span class="p">;</span>
+<span class="n">puts</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+<p>数组a的本质是&amp;a[0]，a+1指向a[1]，故该程序输出BC</p>
 
 
 
