@@ -2207,6 +2207,13 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    假设
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     检验统计量与拒绝域
   </a>
   
@@ -2220,7 +2227,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     拟合优度检验
   </a>
   
@@ -3247,6 +3254,13 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    假设
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     检验统计量与拒绝域
   </a>
   
@@ -3260,7 +3274,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     拟合优度检验
   </a>
   
@@ -3285,7 +3299,9 @@
 
 
 <h1 id="chapter8">Chapter8 假设检验</h1>
-<h2 id="_1">检验统计量与拒绝域</h2>
+<h2 id="_1">假设</h2>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1212/hhedlcyy.webp" /></p>
+<h2 id="_2">检验统计量与拒绝域</h2>
 <p>拒绝原假设<span class="arithmatex">\(H_0\)</span>​的样本值范围称为拒绝域</p>
 <p>① 根据要检验的参数，选择对应的检验统计量<span class="arithmatex">\(G\)</span>（下表以双边检验为例）</p>
 <table>
@@ -3359,12 +3375,12 @@
 <tr>
 <td>双侧检验</td>
 <td><span class="arithmatex">\(H_0: \theta = \theta_0\)</span></td>
-<td>$W = {</td>
+<td><span class="arithmatex">\(W = \{\vert G_0 \vert &gt; g_{\alpha/2}\}\)</span> （<span class="arithmatex">\(\mu\)</span>相关）</td>
 </tr>
 <tr>
 <td>双侧检验</td>
 <td><span class="arithmatex">\(H_0: \theta = \theta_0\)</span></td>
-<td><span class="arithmatex">\(W=\{G_0&lt;g_{1-\frac{\alpha}{2}}\cup G_0&gt;g_\frac{\alpha}{2}\}\)</span></td>
+<td><span class="arithmatex">\(W=\{G_0&lt;g_{1-\frac{\alpha}{2}}\cup G_0&gt;g_\frac{\alpha}{2}\}\)</span>    (σ²相关)</td>
 </tr>
 </tbody>
 </table>
@@ -3432,34 +3448,34 @@
 <tr>
 <td>左侧检验</td>
 <td><span class="arithmatex">\(H_0: \theta \geq \theta_0\)</span></td>
-<td><span class="arithmatex">\(P_- = P(g &lt; G_0)\)</span></td>
+<td><span class="arithmatex">\(P_- = P\{g &lt; G_0\}\)</span></td>
 </tr>
 <tr>
 <td>右侧检验</td>
 <td><span class="arithmatex">\(H_0: \theta \leq \theta_0\)</span></td>
-<td><span class="arithmatex">\(P_- = P(g &gt; G_0)\)</span></td>
+<td><span class="arithmatex">\(P_- = P\{g &gt; G_0\}\)</span></td>
 </tr>
 <tr>
 <td>双侧检验</td>
 <td><span class="arithmatex">\(H_0: \theta = \theta_0\)</span></td>
-<td>$P_- = 2P(g &gt;</td>
+<td><span class="arithmatex">\(P-=2P\{g&gt;\vert G_0 \vert \}\)</span>   (<span class="arithmatex">\(\mu\)</span>相关)</td>
 </tr>
 <tr>
 <td>双侧检验</td>
 <td><span class="arithmatex">\(H_0: \theta = \theta_0\)</span></td>
-<td><span class="arithmatex">\(P_- = 2\min(P(g &gt; G_0), P(g &lt; G_0))\)</span> (σ²相关)</td>
+<td><span class="arithmatex">\(P_- = 2\min\{P(g &gt; G_0), P(g &lt; G_0)\}\)</span>    (σ²相关)</td>
 </tr>
 </tbody>
 </table>
 <p>在试卷第一页抬头寻找 <span class="arithmatex">\(g_A = G_0\)</span>，则：<span class="arithmatex">\(P(g &lt; G_0) = 1 - A\)</span>，<span class="arithmatex">\(P(g &gt; G_0) = A\)</span></p>
 <p>③ 如果<span class="arithmatex">\(P-\le1-\alpha\)</span>，则拒绝原假设 </p>
-<h2 id="_2">拟合优度检验</h2>
+<h2 id="_3">拟合优度检验</h2>
 <p>已知总体X的大量样本数据，使用拟合优度检验判断X是否服从指定分布。</p>
 <p><strong>1.将 <span class="arithmatex">\(X\)</span> 的取值范围划分为 <span class="arithmatex">\(k\)</span> 个区间，获得各个区间内数据数量 <span class="arithmatex">\(n_i\)</span>：（实际频数）</strong></p>
-<p>如果 <span class="arithmatex">\(X\)</span> 是连续型，则要将将 <span class="arithmatex">\(X\)</span> 的取值范围划分为 <span class="arithmatex">\(k\)</span> 个区间（题目已经划分好了）
-<strong>2.假设 <span class="arithmatex">\(X\)</span> 服从该分布，计算 <span class="arithmatex">\(X\)</span> 在各个区间内的理论频数 <span class="arithmatex">\(np_i\)</span></strong></p>
-<p><span class="arithmatex">\(n\)</span> 为样本数， <span class="arithmatex">\(p_i\)</span> 为 <span class="arithmatex">\(X\)</span> 落在区间 <span class="arithmatex">\(i\)</span> 的概率如果分布含有未知参数，则先用极大似然法估出参数（这种情况题目一般会设两问）
-<strong>3.计算统计量 <span class="arithmatex">\(\chi^2\)</span>，若 <span class="arithmatex">\(\chi^2 \leq \chi_\alpha^2(k-1)\)</span>，则接受原假设，否则拒绝原假设</strong></p>
+<p>如果 <span class="arithmatex">\(X\)</span> 是连续型，则要将将 <span class="arithmatex">\(X\)</span> 的取值范围划分为 <span class="arithmatex">\(k\)</span> 个区间（题目已经划分好了）</p>
+<p><strong>2.假设 <span class="arithmatex">\(X\)</span> 服从该分布，计算 <span class="arithmatex">\(X\)</span> 在各个区间内的理论频数 <span class="arithmatex">\(np_i\)</span></strong></p>
+<p><span class="arithmatex">\(n\)</span> 为样本数， <span class="arithmatex">\(p_i\)</span> 为 <span class="arithmatex">\(X\)</span> 落在区间 <span class="arithmatex">\(i\)</span> 的概率如果分布含有未知参数，则先用极大似然法估出参数（这种情况题目一般会设两问）</p>
+<p><strong>3.计算统计量 <span class="arithmatex">\(\chi^2\)</span>，若 <span class="arithmatex">\(\chi^2 \leq \chi_\alpha^2(k-1)\)</span>，则接受原假设，否则拒绝原假设</strong></p>
 <p>拟合优度统计量<span class="arithmatex">\(\chi^2 = \sum_{i=1}^{k} \frac{(n_i - np_i)^2}{np_i}\)</span></p>
 
 

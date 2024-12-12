@@ -3503,7 +3503,8 @@ $$</p>
 <h2 id="_4">区间估计</h2>
 <h3 id="_5">定义</h3>
 <p>​   设总体为<span class="arithmatex">\(X\)</span>,<span class="arithmatex">\(\theta \in \Theta\)</span>是待估参数，<span class="arithmatex">\(X_1,X_2,\ldots ,X_n\)</span>是来自总体X的样本，统计量<span class="arithmatex">\(\hat \theta_L(X_1,X_2,\ldots ,X_n), \hat \theta_U(X_1,X_2,\ldots ,X_n)\)</span>满足<span class="arithmatex">\(\hat \theta_L &lt; \hat \theta_U\)</span>, 且对于给定的<span class="arithmatex">\(\alpha\)</span>，对于任意的<span class="arithmatex">\(\theta \in \Theta\)</span>, 有<span class="arithmatex">\(P\{\hat \theta_L &lt; \theta &lt; \hat\theta_U\}\ge 1-\alpha\)</span></p>
-<p>则称区间<span class="arithmatex">\((\hat \theta_L , \hat \theta_U)\)</span>是参数<span class="arithmatex">\(\theta\)</span>的<strong>置信水平</strong>为<span class="arithmatex">\(1-\alpha\)</span>的<strong>双侧置信区间</strong>，<span class="arithmatex">\(\hat \theta_L\)</span>和 <span class="arithmatex">\(\hat \theta_U\)</span>分别为<strong>双侧置信下限</strong>和<strong>双侧置信上限</strong></p>
+<p>则称区间<span class="arithmatex">\((\hat \theta_L , \hat \theta_U)\)</span>是参数<span class="arithmatex">\(\theta\)</span>的<strong>置信水平</strong>为<span class="arithmatex">\(1-\alpha\)</span>的<strong>双侧置信区间</strong>，<span class="arithmatex">\(\hat \theta_L\)</span>和 <span class="arithmatex">\(\hat \theta_U\)</span>​分别为<strong>双侧置信下限</strong>和<strong>双侧置信上限</strong></p>
+<p><strong>单侧置信上限</strong>和<strong>单侧置信下限</strong>只考虑一侧，<span class="arithmatex">\(\hat \theta_L\)</span>是<span class="arithmatex">\(\theta\)</span>的置信度为<span class="arithmatex">\(1-\frac{\alpha}{2}\)</span>的单侧置信下限，<span class="arithmatex">\(\hat \theta_U\)</span>是<span class="arithmatex">\(\theta\)</span>的置信度为<span class="arithmatex">\(1-\frac{\alpha}{2}\)</span>的单侧置信上限</p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1205/yqenvpxl.webp" /></p>
 <p><span class="arithmatex">\(E(\hat \theta_U-\hat \theta_L)\)</span>为区间的<strong>精确度</strong>，精确度的一半为<strong>误差限</strong></p>
 <h3 id="_6">枢轴量</h3>
@@ -3517,7 +3518,7 @@ $$</p>
 <p>对给定的置信水平<span class="arithmatex">\(1-\alpha\)</span>，根据枢轴量<span class="arithmatex">\(G(X_1,X_2,\ldots ,X_n,\theta)\)</span>的分布，选择两常数<span class="arithmatex">\(a\)</span>和<span class="arithmatex">\(b\)</span>,使<span class="arithmatex">\(P_\theta\{a&lt;G(X_1,X_2,\ldots ,X_n,\theta)&lt;b\}=1-\alpha\)</span>。若对离散随机变量，可能没有办法使概率正好等于<span class="arithmatex">\(1-\alpha\)</span>,因此，<span class="arithmatex">\(a\)</span>和<span class="arithmatex">\(b\)</span>应使<span class="arithmatex">\(P_\theta\{a&lt;G(X_1,X_2,\ldots ,X_n,\theta)&lt;b\}\ge1-\alpha\)</span>且尽可能接近<span class="arithmatex">\(1-\alpha\)</span></p>
 </li>
 <li>
-<p>根据分布，取出尽可能小的区间<span class="arithmatex">\((a,b)\)</span>，并据此解出<span class="arithmatex">\(\hat \theta_L, \hat \theta_R\)</span></p>
+<p>根据分布，取出尽可能小的区间<span class="arithmatex">\((a,b)\)</span>，并据此解出<span class="arithmatex">\(\hat \theta_L, \hat \theta_U\)</span></p>
 </li>
 </ol>
 <p>习惯上，取<span class="arithmatex">\(a\)</span>和<span class="arithmatex">\(b\)</span>满足<span class="arithmatex">\(P_\theta\{G(X_1,X_2,\ldots ,X_n,\theta)\le a\}=P_\theta\{G(X_1,X_2,\ldots ,X_n,\theta)\ge b\}=\frac{\alpha}{2}\)</span></p>
@@ -3533,19 +3534,26 @@ $$</p>
 <p>例子：</p>
 </li>
 </ol>
-<p>一、单总体 <span class="arithmatex">\(N\left(\mu, \sigma^2\right)\)</span> 常用枢轴量</p>
-<p>(1) <span class="arithmatex">\(\sigma^2\)</span> 已知, 求 <span class="arithmatex">\(\mu\)</span> 的区间估计: <span class="arithmatex">\(G=\frac{\bar{X}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)\)</span></p>
-<p>(2) <span class="arithmatex">\(\sigma^2\)</span> 未知, 求 <span class="arithmatex">\(\mu\)</span> 的区间估计: <span class="arithmatex">\(\frac{\bar{X}-\mu}{S / \sqrt{n}} \sim t(n-1)\)</span></p>
+<p><strong>一、单正态总体 <span class="arithmatex">\(N\left(\mu, \sigma^2\right)\)</span> 常用枢轴量</strong></p>
+<p>(1) <span class="arithmatex">\(\sigma^2\)</span> 已知, 求 <span class="arithmatex">\(\mu\)</span> 的区间估计: <span class="arithmatex">\(G=\frac{\bar{X}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)\)</span>​</p>
+<p><strong>区间为(<span class="arithmatex">\(\overline{X}-\frac{\sigma}{\sqrt{n}}z_{\alpha /2}\)</span>，<span class="arithmatex">\(\overline{X}+\frac{\sigma}{\sqrt{n}}z_{\alpha /2}\)</span>)</strong></p>
+<p>(2) <span class="arithmatex">\(\sigma^2\)</span> 未知, 求 <span class="arithmatex">\(\mu\)</span> 的区间估计: <span class="arithmatex">\(\frac{\bar{X}-\mu}{S / \sqrt{n}} \sim t(n-1)\)</span>​</p>
+<p><strong>区间为(<span class="arithmatex">\(\overline{X}-\frac{S}{\sqrt{n}}t_{\alpha /2}(n-1)\)</span>，<span class="arithmatex">\(\overline{X}+\frac{S}{\sqrt{n}}t_{\alpha /2}(n-1)\)</span>)</strong></p>
 <p>(3) <span class="arithmatex">\(\mu\)</span> 未知, 求 <span class="arithmatex">\(\sigma^2\)</span> 的区间估计: <span class="arithmatex">\(\frac{(n-1) S^2}{\sigma^2}=\sum_{i=1}^n\left(\frac{X_i-\bar{X}}{\sigma}\right)^2 \sim \chi^2(n-1)\)</span></p>
+<p><strong>区间为(<span class="arithmatex">\(\frac{(n-1)S^2}{\chi^2_{\alpha/2}(n-1)}\)</span>，<span class="arithmatex">\(\frac{(n-1)S^2}{\chi^2_{1-\alpha/2}(n-1)}\)</span>)</strong></p>
 <p>*(4) <span class="arithmatex">\(\mu\)</span> 已知, 求 <span class="arithmatex">\(\sigma^2\)</span> 的区间估计: <span class="arithmatex">\(\sum_{i=1}^n\left(\frac{X_i-\mu}{\sigma}\right)^2 \sim \chi^2(n)\)</span>​​​​​</p>
-<p>二、双总体的常用枢轴量</p>
-<p>(1) <span class="arithmatex">\(\sigma_1^2, \sigma_2^2 己\)</span> 知, 求 <span class="arithmatex">\(\mu_1-\mu_2\)</span> 的区间估计: <span class="arithmatex">\(\frac{(\bar{X}-\bar{Y})-\left(\mu_1-\mu_2\right)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}} \sim N(0,1)\)</span></p>
+<p><strong>二、双正态总体的常用枢轴量</strong></p>
+<p>(1) <span class="arithmatex">\(\sigma_1^2, \sigma_2^2\)</span> 己知, 求 <span class="arithmatex">\(\mu_1-\mu_2\)</span> 的区间估计: <span class="arithmatex">\(\frac{(\bar{X}-\bar{Y})-\left(\mu_1-\mu_2\right)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}} \sim N(0,1)\)</span>​</p>
+<p><strong>区间为(<span class="arithmatex">\(\overline{X}-\overline{Y}\pm z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}\)</span>)</strong></p>
 <p>(2) <span class="arithmatex">\(\sigma_1^2=\sigma_2^2\)</span> 未知, 求 <span class="arithmatex">\(\mu_1-\mu_2\)</span>​​的区间估计:</p>
 <div class="arithmatex">\[
-   \frac{(\bar{X}-\bar{Y})-\left(\mu_1-\mu_2\right)}{S_{w}\sqrt{{\frac{1}{n_1}+\frac{1}{n_2}}}} \sim I\left(n_1+n_2-2\right)
+\frac{(\bar{X}-\bar{Y})-\left(\mu_1-\mu_2\right)}{S_{w}\sqrt{{\frac{1}{n_1}+\frac{1}{n_2}}}} \sim t\left(n_1+n_2-2\right)
 \]</div>
-<p>(3) <span class="arithmatex">\(\mu_1, \mu_2\)</span> 未知, 求 <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span> 的区间估计: <span class="arithmatex">\(\frac{S_1^2}{S_2^2} / \frac{\sigma_1^2}{\sigma_2^2} \sim F\left(n_1-1, n_2-1\right)\)</span></p>
-<p>(4) <span class="arithmatex">\(\mu_1, \mu_2\)</span> 已知, 求 <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span> 的区间估计: <span class="arithmatex">\(\frac{\sum_{m=1}^n\left(X_1-\mu_1\right)^2 / n_1}{\sum_{i=1}^2\left(Y_1-\mu_2\right)^2 / n_2} / \frac{\sigma_1^2}{\sigma_2^2} \sim F\left(n_1, n_2\right)\)</span>​</p>
+<div class="arithmatex">\[
+S^2_w=\frac{(n_1-1)S^2_1+(n_2-1)S_2^2}{n_1+n_2-2},S_w=\sqrt{S^2_w}
+\]</div>
+<p>​      (3) <span class="arithmatex">\(\mu_1, \mu_2\)</span> 未知, 求 <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span> 的区间估计: <span class="arithmatex">\(\frac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2} \sim F\left(n_1-1, n_2-1\right)\)</span></p>
+<p>​      *(4) <span class="arithmatex">\(\mu_1, \mu_2\)</span> 已知, 求 <span class="arithmatex">\(\frac{\sigma_1^2}{\sigma_2^2}\)</span> 的区间估计: <span class="arithmatex">\(\frac{\sum_{m=1}^n\left(X_1-\mu_1\right)^2 / n_1}{\sum_{i=1}^2\left(Y_1-\mu_2\right)^2 / n_2} / \frac{\sigma_1^2}{\sigma_2^2} \sim F\left(n_1, n_2\right)\)</span>​</p>
 <h2 id="_9">估计量的评价准则</h2>
 <h3 id="_10">无偏性准则</h3>
 <p>无偏估计
