@@ -1971,8 +1971,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2.结构指针
+  <a href="#3" class="md-nav__link">
+    3.结构指针
   </a>
   
 </li>
@@ -3266,8 +3266,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2.结构指针
+  <a href="#3" class="md-nav__link">
+    3.结构指针
   </a>
   
 </li>
@@ -3292,13 +3292,21 @@
 
 <h1 id="_1">结构类型</h1>
 <h2 id="1">1.定义</h2>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">结构名</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">类型名</span><span class="w">  </span><span class="n">结构成员名1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">类型名</span><span class="w">  </span><span class="n">结构成员名2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="n">类型名</span><span class="w">  </span><span class="n">结构成员名n</span><span class="p">;</span>
+<span class="p">}</span><span class="n">结构变量名表</span><span class="p">;</span>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">st</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>st是标签名</p>
+<p>st是标签名，要符合标识符命名规则</p>
 <p>标签名单独不能构成结构类型名，它必须与关键词struct结合起来才能构成结构类型名：struct st</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -3307,13 +3315,16 @@
 <span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">score</span><span class="o">=</span><span class="mi">90</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="2">2.结构指针</h2>
+<p>如果两个结构变量具有相同的类型，允许将一个结构变量的值直接赋值给另一结构变量。</p>
+<h2 id="3">3.结构指针</h2>
+<p>结构数组的每一个元素都是一个结构类型的变量</p>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">st</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="p">{{},{},{}}</span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">st</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
 <span class="n">p</span><span class="o">=</span><span class="n">a</span><span class="p">;</span>
 <span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">)).</span><span class="n">name等价于</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">name</span>
 </code></pre></div>
 <p>这里的p为结构指针</p>
+<p><strong>-&gt;叫作指向运算符</strong></p>
 <p>p-&gt;name表示<strong>p指向的对象的name</strong></p>
 <p>句点.和箭头-&gt;都是优先级最高的运算符</p>
 <p>句点.的左边必须是变量，箭头-&gt;左边必须是指针</p>

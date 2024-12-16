@@ -1949,15 +1949,28 @@
       
         <li class="md-nav__item">
   <a href="#10" class="md-nav__link">
-    10.符号常数定义
+    10.预处理指令
+  </a>
+  
+    <nav class="md-nav" aria-label="10.预处理指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    #define
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#11main" class="md-nav__link">
-    11.main()的参数
+        
+          <li class="md-nav__item">
+  <a href="#inculde" class="md-nav__link">
+    #inculde
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3508,15 +3521,28 @@
       
         <li class="md-nav__item">
   <a href="#10" class="md-nav__link">
-    10.符号常数定义
+    10.预处理指令
+  </a>
+  
+    <nav class="md-nav" aria-label="10.预处理指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    #define
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#11main" class="md-nav__link">
-    11.main()的参数
+        
+          <li class="md-nav__item">
+  <a href="#inculde" class="md-nav__link">
+    #inculde
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3653,16 +3679,80 @@
 <h2 id="9">9.局部变量和全局变量</h2>
 <p>C语言把定义在函数内部的变量称为局部变量，各函数之间内部的变量独立，不会相互干扰。不同函数之间可以存在同名变量，但函数内部之间也不会相互影响</p>
 <p>C语言把定义在函数外而不属于任何函数的变量称为全局变量，全局变量的作用范围是从定义开始到程序所在文件的结束，它对作用范围内所有函数都起作用。全局变量一般定义在第一个函数的前面。</p>
+<p>全局变量只能在某个模块定义一次，如果其他模块用该全局变量，需要通过外部变量声明，否则编译错误。外部变量声明格式。</p>
+<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="n">类型名</span><span class="w">  </span><span class="n">变量表</span><span class="p">;</span>
+</code></pre></div>
 <p>全局变量和局部变量允许同名，当函数局部变量和全局变量同名，在<strong>该函数中</strong>全局变量不起作用，局部变量起作用。对于其他不存在同名变量的函数，局部变量依然有效。当函数局部变量与复合语句的局部变量同名时，以复合语句为准。</p>
 <p><strong>静态局部变量</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">类型名</span><span class="w">  </span><span class="n">变量表</span><span class="p">;</span>
 </code></pre></div>
 <p>静态变量赋初值只在函数第一次调用时起作用，若没有赋初值，系统自动赋0/</p>
-<h2 id="10">10.符号常数定义</h2>
+<h2 id="10">10.预处理指令</h2>
 <p><img alt="7e0397676ecfae6e6809bab10754a9f" src="https://file.cc98.org/v4-upload/d/2024/1107/sqqf52ir.webp" /></p>
 <p><img alt="e78ba7326593f479190595f246e3b96" src="https://file.cc98.org/v4-upload/d/2024/1107/kfpmu3mv.webp" /></p>
-<p>可定义宏，具体运用时注意优先级，第三行中正确的运算顺序应为a+b*c</p>
+<h3 id="define">#define</h3>
+<p>可用#define定义宏，可定义常量，也可以带参数</p>
+<p>具体运用时注意优先级，第三行中正确的运算顺序应为a+b*c</p>
+<p>宏的用途：</p>
+<p>1.定义符号常量</p>
+<p>2.简单的函数功能实现</p>
 <p>若避免优先级引起误解，应定义F(x,y)  ((x)+(y))</p>
+<h3 id="inculde">#inculde</h3>
+<h1 id="_6">开头，表示编译预处理命令，行尾不需要分号</h1>
+<p>.h文件通常被称为头文件</p>
+<table>
+<thead>
+<tr>
+<th>头文件名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctype.h</td>
+<td>字符处理</td>
+</tr>
+<tr>
+<td>math.h</td>
+<td>与数学处理函数有关的说明和定义</td>
+</tr>
+<tr>
+<td>stdio.h</td>
+<td>输入输出函数中使用的有关说明和定义</td>
+</tr>
+<tr>
+<td>string.h</td>
+<td>字符串函数的有关说明和定义</td>
+</tr>
+<tr>
+<td>stddef.h</td>
+<td>定义某些常用内容</td>
+</tr>
+<tr>
+<td>stdlib.h</td>
+<td>杂项说明</td>
+</tr>
+<tr>
+<td>time.h</td>
+<td>支持系统时间函数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="if">#if</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#if 常量表达式</span>
+<span class="w">    </span><span class="n">程序段</span>
+<span class="cp">#endif</span>
+</code></pre></div>
+<p>对常量表达式求值，如果结果非0，那么#if和#endif之间的程序段会被执行，否则不会处理。</p>
+<h1 id="ifelifelse">if指令后面也可以有#elif和#else指令</h1>
+<h3 id="ifdef">#ifdef</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#ifdef 标识符</span>
+<span class="w">     </span><span class="n">程序段</span>
+<span class="cp">#endif</span>
+</code></pre></div>
+<p>如果标识符代表的宏已经被定义过了，执行程序段，否则不执行程序段</p>
+<h1 id="ifndefifdef">ifndef的意义和#ifdef正好相反</h1>
+<h1 id="ifdefelifelse">ifdef指令后面也可以有#elif和#else指令</h1>
 <h2 id="11main">11.main()的参数</h2>
 <p>当函数返回值为int，此int可省略</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
@@ -3673,6 +3763,7 @@
 <p>argc：argument count，参数个数</p>
 <p>argv：argument variable，参数的内容</p>
 <p>argv的类型为指针数组</p>
+<p>一个C语言由多个文件模块组成，<strong>整个程序只允许有一个main()函数</strong>，程序允许从main()函数开始。包含main()函数的模块叫主模块。</p>
 
 
 
