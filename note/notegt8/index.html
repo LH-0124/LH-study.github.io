@@ -3358,13 +3358,13 @@
 <td>单个正态总体</td>
 <td><span class="arithmatex">\(\mu = \mu_0\)</span></td>
 <td><span class="arithmatex">\(\sigma^2\)</span> 已知</td>
-<td><span class="arithmatex">\(Z = \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)\)</span></td>
+<td><span class="arithmatex">\(Z = \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \sim N(0,1)\)</span></td>
 </tr>
 <tr>
 <td>单个正态总体</td>
 <td><span class="arithmatex">\(\mu = \mu_0\)</span></td>
 <td><span class="arithmatex">\(\sigma^2\)</span> 未知</td>
-<td><span class="arithmatex">\(T = \frac{\overline{X} - \mu}{S / \sqrt{n}} \sim t(n-1)\)</span></td>
+<td><span class="arithmatex">\(T = \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \sim t(n-1)\)</span></td>
 </tr>
 <tr>
 <td>单个正态总体</td>
@@ -3375,20 +3375,20 @@
 <tr>
 <td>两个正态总体</td>
 <td><span class="arithmatex">\(\mu_1 = \mu_2\)</span></td>
-<td><span class="arithmatex">\(\sigma^2\)</span> 已知</td>
-<td><span class="arithmatex">\(Z = \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \sim N(0,1)\)</span></td>
+<td><span class="arithmatex">\(\sigma_1^2,\sigma_2^2\)</span> 已知</td>
+<td><span class="arithmatex">\(Z = \frac{\overline{X} - \overline{Y}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \sim N(0,1)\)</span></td>
 </tr>
 <tr>
 <td>两个正态总体</td>
 <td><span class="arithmatex">\(\mu_1 = \mu_2\)</span></td>
-<td><span class="arithmatex">\(\sigma^2\)</span> 未知</td>
-<td><span class="arithmatex">\(T = \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t(n_1 + n_2 - 2)\)</span></td>
+<td><span class="arithmatex">\(\sigma_1^2=\sigma_2^2=\sigma^2\)</span> 未知</td>
+<td><span class="arithmatex">\(T = \frac{\overline{X} - \overline{Y}}{S_w\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t(n_1 + n_2 - 2)\)</span></td>
 </tr>
 <tr>
 <td>两个正态总体</td>
 <td><span class="arithmatex">\(\sigma_1^2 = \sigma_2^2\)</span></td>
 <td>——</td>
-<td><span class="arithmatex">\(\frac{(n_1-1)S_1^2}{\sigma_1^2} \frac{(n_2-1)S_2^2}{\sigma_2^2} \sim F(n_1-1, n_2-1)\)</span></td>
+<td><span class="arithmatex">\(\frac{S_1^2}{S_2^2}\sim F(n_1-1, n_2-1)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3420,7 +3420,7 @@
 <tr>
 <td>双侧检验</td>
 <td><span class="arithmatex">\(H_0: \theta = \theta_0\)</span></td>
-<td><span class="arithmatex">\(W=\{G_0&lt;g_{1-\frac{\alpha}{2}}\cup G_0&gt;g_\frac{\alpha}{2}\}\)</span>    (σ²相关)</td>
+<td><span class="arithmatex">\(W=\{G_0&lt;g_{1-\frac{\alpha}{2}}\cup G_0&gt;g_\frac{\alpha}{2}\}\)</span>    (σ²相关)  <strong>(通用)</strong></td>
 </tr>
 </tbody>
 </table>
@@ -3441,13 +3441,13 @@
 <td>单个正态总体</td>
 <td><span class="arithmatex">\(\mu = \mu_0\)</span></td>
 <td><span class="arithmatex">\(\sigma^2\)</span> 已知</td>
-<td><span class="arithmatex">\(Z = \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)\)</span></td>
+<td><span class="arithmatex">\(Z = \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \sim N(0,1)\)</span></td>
 </tr>
 <tr>
 <td>单个正态总体</td>
 <td><span class="arithmatex">\(\mu = \mu_0\)</span></td>
 <td><span class="arithmatex">\(\sigma^2\)</span> 未知</td>
-<td><span class="arithmatex">\(T = \frac{\overline{X} - \mu}{S / \sqrt{n}} \sim t(n-1)\)</span></td>
+<td><span class="arithmatex">\(T = \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \sim t(n-1)\)</span></td>
 </tr>
 <tr>
 <td>单个正态总体</td>
@@ -3458,20 +3458,20 @@
 <tr>
 <td>两个正态总体</td>
 <td><span class="arithmatex">\(\mu_1 = \mu_2\)</span></td>
-<td><span class="arithmatex">\(\sigma^2\)</span> 已知</td>
-<td><span class="arithmatex">\(Z = \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \sim N(0,1)\)</span></td>
+<td><span class="arithmatex">\(\sigma_1^2,\sigma_2^2\)</span> 已知</td>
+<td><span class="arithmatex">\(Z = \frac{\overline{X} - \overline{Y}}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}} \sim N(0,1)\)</span></td>
 </tr>
 <tr>
 <td>两个正态总体</td>
 <td><span class="arithmatex">\(\mu_1 = \mu_2\)</span></td>
-<td><span class="arithmatex">\(\sigma^2\)</span> 未知</td>
-<td><span class="arithmatex">\(T = \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t(n_1 + n_2 - 2)\)</span></td>
+<td><span class="arithmatex">\(\sigma_1^2=\sigma_2^2=\sigma^2\)</span> 未知</td>
+<td><span class="arithmatex">\(T = \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{S_w  \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t(n_1 + n_2 - 2)\)</span></td>
 </tr>
 <tr>
 <td>两个正态总体</td>
 <td><span class="arithmatex">\(\sigma_1^2 = \sigma_2^2\)</span></td>
 <td>——</td>
-<td><span class="arithmatex">\(\frac{(n_1-1)S_1^2}{\sigma_1^2} \frac{(n_2-1)S_2^2}{\sigma_2^2} \sim F(n_1-1, n_2-1)\)</span></td>
+<td><span class="arithmatex">\(\frac{S_1^2}{S_2^2}\sim F(n_1-1, n_2-1)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3503,12 +3503,12 @@
 <tr>
 <td>双侧检验</td>
 <td><span class="arithmatex">\(H_0: \theta = \theta_0\)</span></td>
-<td><span class="arithmatex">\(P_- = 2\min\{P(g &gt; G_0), P(g &lt; G_0)\}\)</span>    (σ²相关)</td>
+<td><span class="arithmatex">\(P_- = 2\min\{P(g &gt; G_0), P(g &lt; G_0)\}\)</span>    (σ²相关)  <strong>(通用)</strong></td>
 </tr>
 </tbody>
 </table>
 <p>在试卷第一页抬头寻找 <span class="arithmatex">\(g_A = G_0\)</span>，则：<span class="arithmatex">\(P(g &lt; G_0) = 1 - A\)</span>，<span class="arithmatex">\(P(g &gt; G_0) = A\)</span></p>
-<p>③ 如果<span class="arithmatex">\(P-\le1-\alpha\)</span>，则拒绝原假设 </p>
+<p>③ 如果<span class="arithmatex">\(P-\le\alpha\)</span>，则拒绝原假设 </p>
 <h2 id="_3">拟合优度检验</h2>
 <p>已知总体X的大量样本数据，使用拟合优度检验判断X是否服从指定分布。</p>
 <p><strong>1.将 <span class="arithmatex">\(X\)</span> 的取值范围划分为 <span class="arithmatex">\(k\)</span> 个区间，获得各个区间内数据数量 <span class="arithmatex">\(n_i\)</span>：（实际频数）</strong></p>
@@ -3516,7 +3516,10 @@
 <p><strong>2.假设 <span class="arithmatex">\(X\)</span> 服从该分布，计算 <span class="arithmatex">\(X\)</span> 在各个区间内的理论频数 <span class="arithmatex">\(np_i\)</span></strong></p>
 <p><span class="arithmatex">\(n\)</span> 为样本数， <span class="arithmatex">\(p_i\)</span> 为 <span class="arithmatex">\(X\)</span> 落在区间 <span class="arithmatex">\(i\)</span> 的概率如果分布含有未知参数，则先用极大似然法估出参数（这种情况题目一般会设两问）</p>
 <p><strong>3.计算统计量 <span class="arithmatex">\(\chi^2\)</span>，若 <span class="arithmatex">\(\chi^2 \leq \chi_\alpha^2(k-1)\)</span>，则接受原假设，否则拒绝原假设</strong></p>
-<p>拟合优度统计量<span class="arithmatex">\(\chi^2 = \sum_{i=1}^{k} \frac{(n_i - np_i)^2}{np_i}\)</span></p>
+<p>拟合优度统计量
+$$
+\chi^2 = \sum_{i=1}^{k} \frac{(n_i - np_i)^2}{np_i}
+$$</p>
 
 
 
