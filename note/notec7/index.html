@@ -2141,6 +2141,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    10.数组与指针变量的相同点和不同点
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3660,6 +3667,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    10.数组与指针变量的相同点和不同点
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3827,7 +3841,7 @@
 <span class="w">    </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">23</span><span class="p">}</span>
 <span class="p">};</span>
-<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w">    </span><span class="n">也可以写成int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span><span class="err">；</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w">    </span><span class="c1">//也可以写成int (*p)[4]；</span>
 <span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="p">;</span>
 <span class="n">p</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 <span class="n">q</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
@@ -3916,6 +3930,24 @@
 <span class="n">puts</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
 </code></pre></div>
 <p>数组a的本质是&amp;a[0]，a+1指向a[1]，故该程序输出BC</p>
+<h2 id="10">10.数组与指针变量的相同点和不同点</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;ABC&quot;</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="c1">//或char *p=&amp;a[0];</span>
+</code></pre></div>
+<p><strong>相同点：</strong></p>
+<p>（1）p[i]==a[i]</p>
+<p>（2）*（p+i）= * (a+i)</p>
+<p><strong>不同点：</strong></p>
+<p>（1）sizeof  (a) ！=  sizeof  (p)</p>
+<p>此处的a必须理解成数组a，不能理解成&amp;a[0]</p>
+<p>（2）赋值</p>
+<p>a= "xyz";  语法错误，这里的a就是&amp;a[0]即它是一个常数，不能被赋值</p>
+<p>p="xyz";   语法正确</p>
+<p>（3）取地址</p>
+<p>只有对象（容器）可以取地址，对象包括变量、数组、函数。所以&amp;a[0]不能取地址，即a在取地址时不能理解为&amp;a[0]</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">u</span><span class="p">)[</span><span class="mi">100</span><span class="p">]</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="c1">//此处a是数组a，而不是&amp;a[0]</span>
+<span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">t</span><span class="o">=&amp;</span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
 
 
 

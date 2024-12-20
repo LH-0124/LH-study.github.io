@@ -3414,7 +3414,7 @@
 <span class="w">    </span><span class="n">类型名</span><span class="w">  </span><span class="n">结构成员名2</span><span class="p">;</span>
 <span class="w">    </span><span class="p">...</span>
 <span class="w">    </span><span class="n">类型名</span><span class="w">  </span><span class="n">结构成员名n</span><span class="p">;</span>
-<span class="p">}</span><span class="n">结构变量名表</span><span class="p">;</span>
+<span class="p">}</span><span class="n">结构变量名表</span><span class="p">;</span><span class="w">     </span><span class="c1">//在定义结构类型的同时顺便定义变量</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">st</span>
 <span class="p">{</span>
@@ -3447,13 +3447,14 @@
 <h2 id="3">3.链表</h2>
 <p><strong>参考资料：</strong><a href="https://blog.csdn.net/ffortunateoy/article/details/90731996">CSDN</a></p>
 <h3 id="_2">定义</h3>
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
 <span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
 </code></pre></div>
 <p>自定义类型typedef不是用来定义一些新的数据类型，而是将C语言中已有类型（包括已定义过的自定义类型）重新命名，用新的名称代替已有的数据类型，常用于简化对复杂数据类型的定义</p>
+<p>Node包含data数据和指向下一个节点的地址</p>
 <h3 id="_3">创建</h3>
 <div class="highlight"><pre><span></span><code><span class="c1">//创建结点</span>
 <span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">create_node</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
@@ -3545,7 +3546,7 @@
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">list_len</span><span class="p">(</span><span class="n">head</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">//判断链表是否为空以及插入的位置是否超出链表的范围</span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="c1">//删除头节点</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">;</span>
 <span class="w">        </span><span class="n">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="c1">//头结点等于头结点的下一个结点</span>

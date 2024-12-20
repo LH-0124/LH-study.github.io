@@ -3784,6 +3784,35 @@
 <p>argv：argument variable，参数的内容</p>
 <p>argv的类型为指针数组</p>
 <p>一个C语言由多个文件模块组成，<strong>整个程序只允许有一个main()函数</strong>，程序允许从main()函数开始。包含main()函数的模块叫主模块。</p>
+<h2 id="12typedef">12.typedef</h2>
+<p>typedef 可以用来定义新类型</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dword</span><span class="p">;</span>
+</code></pre></div>
+<p>定义了一个新类型，可以代替unsigned long int</p>
+<p>deword a; 相当于unsigned long int a;</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tenint</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="n">tenint</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="c1">//相当于 int a[10]</span>
+<span class="n">tenint</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="c1">//相当于 int a[2][10]</span>
+</code></pre></div>
+<p>理解的方法简单粗暴一点就是把typedef的新类型tenint名字划掉，再把新定义的变量a代进去</p>
+<p>例：</p>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1219/u45vfuop.webp" /></p>
+<p>这里的ap是新的类型名</p>
+<h2 id="13mallocfree">13.malloc()与free()函数</h2>
+<p>malloc：内存分配</p>
+<p>free：内存释放</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//malloc()原型</span>
+<span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">malloc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="c1">//其中参数n表示要分配的内存的字节数，该函数返回分配到的内存块的首地址</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">i</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span><span class="o">=</span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</code></pre></div>
 
 
 
