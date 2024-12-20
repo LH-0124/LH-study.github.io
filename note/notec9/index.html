@@ -3450,7 +3450,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w">   </span><span class="c1">//一个指向类型为node的指针</span>
 <span class="p">}</span><span class="w"> </span><span class="n">Node</span><span class="p">;</span>
 </code></pre></div>
 <p>自定义类型typedef不是用来定义一些新的数据类型，而是将C语言中已有类型（包括已定义过的自定义类型）重新命名，用新的名称代替已有的数据类型，常用于简化对复杂数据类型的定义</p>
@@ -3532,7 +3532,7 @@
 <h3 id="_5">删除</h3>
 <p>删除和插入一个结点方法类似，需要考虑以下几点：</p>
 <p>1.删除前判断链表是否为空，删除的位置是否超出链表的范围</p>
-<p>2.删除的位置为0时，也就是删除一个头结点</p>
+<p><strong>2.删除的位置为0时，也就是删除一个头结点</strong></p>
 <p>3.删除的结点记得释放内存，防止野指针</p>
 <p>删除步骤，如下图：
 1.将指针移到删除结点的前一个结点node</p>
@@ -3540,6 +3540,7 @@
 <p>3.node的下一个结点等于tmp的下一个结点</p>
 <p>4.释放tmp的内存，并将tmp置为空，防止野指针</p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1216/p4141bhm.webp" /></p>
+<p><strong>node-&gt;next=tmp-&gt;next</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1">//删除指定位置的一个结点 返回头结点</span>
 <span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">list_delete</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">head</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span>
 <span class="p">{</span>

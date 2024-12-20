@@ -3764,15 +3764,17 @@
 <span class="cp">#endif</span>
 </code></pre></div>
 <p>对常量表达式求值，如果结果非0，那么#if和#endif之间的程序段会被执行，否则不会处理。</p>
-<h1 id="ifelifelse">if指令后面也可以有#elif和#else指令</h1>
+<div class="highlight"><pre><span></span><code><span class="cp">#if指令后面也可以有#elif和#else指令</span>
+</code></pre></div>
 <h3 id="ifdef">#ifdef</h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#ifdef 标识符</span>
 <span class="w">     </span><span class="n">程序段</span>
 <span class="cp">#endif</span>
 </code></pre></div>
 <p>如果标识符代表的宏已经被定义过了，执行程序段，否则不执行程序段</p>
-<h1 id="ifndefifdef">ifndef的意义和#ifdef正好相反</h1>
-<h1 id="ifdefelifelse">ifdef指令后面也可以有#elif和#else指令</h1>
+<div class="highlight"><pre><span></span><code><span class="cp">#ifndef的意义和#ifdef正好相反</span>
+<span class="cp">#ifdef指令后面也可以有#elif和#else指令</span>
+</code></pre></div>
 <h2 id="11main">11.main()的参数</h2>
 <p>当函数返回值为int，此int可省略</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
@@ -3813,6 +3815,8 @@
 <span class="p">}</span>
 <span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
 </code></pre></div>
+<h2 id="14">14.递归</h2>
+<p>自己调用自己的函数，要有结束条件</p>
 
 
 
