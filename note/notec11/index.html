@@ -3311,7 +3311,7 @@
 <p>C语言把定义在函数内部的变量称为局部变量，各函数之间内部的变量独立，不会相互干扰。不同函数之间可以存在同名变量，但函数内部之间也不会相互影响</p>
 <p>C语言把定义在函数外而不属于任何函数的变量称为全局变量，全局变量的作用范围是从定义开始到程序所在文件的结束，它对作用范围内所有函数都起作用。全局变量一般定义在第一个函数的前面。</p>
 <p><strong>如果全局变量没有被初始化，会得到0值。指针会得到NULL值。必须用编译时刻已知的值（或CONST类型变量）来初始化全局变量。初始化要在main函数之前。</strong></p>
-<p>全局变量只能在某个模块定义一次，如果其他模块用该全局变量，需要通过外部变量声明，否则编译错误。外部变量声明格式。</p>
+<p>全局变量只能在某个模块定义一次，如果其他模块（.h头文件）用该全局变量，需要通过外部变量声明，否则编译错误。外部变量声明格式。<strong>声明不能初始化。</strong>声明不产生代码。同名结构不能重复声明</p>
 <div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w">  </span><span class="n">类型名</span><span class="w">  </span><span class="n">变量表</span><span class="p">;</span>
 </code></pre></div>
 <p>全局变量和局部变量允许同名，当函数局部变量和全局变量同名，在<strong>该函数中</strong>全局变量不起作用，局部变量起作用。对于其他不存在同名变量的函数，局部变量依然有效。当函数局部变量与复合语句的局部变量同名时，以复合语句为准。</p>
@@ -3325,11 +3325,15 @@
 <p><img alt="e78ba7326593f479190595f246e3b96" src="https://file.cc98.org/v4-upload/d/2024/1107/kfpmu3mv.webp" /></p>
 <h3 id="define">#define</h3>
 <p>可用#define定义宏，可定义常量，也可以带参数</p>
+<p>如果一个宏的值中有其他宏的名字，也会被替换</p>
+<p>如果一个宏的值超过一行，最后一行之前的行末需要加\</p>
+<p>宏的值后面出现的注释不会被当作宏的值的一部分</p>
 <p>具体运用时注意优先级，第三行中正确的运算顺序应为a+b*c</p>
 <p>宏的用途：</p>
 <p>1.定义符号常量</p>
-<p>2.简单的函数功能实现</p>
-<p>若避免优先级引起误解，应定义F(x,y)  ((x)+(y))</p>
+<p>2.带参数的宏实现简单的函数功能</p>
+<p>若避免优先级引起误解，应定义F(x,y)  ((x)+(y))，<strong>结尾不能加分号</strong></p>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1221/flegufod.webp" /></p>
 <h3 id="inculde">#inculde</h3>
 <h1 id="_1">开头，表示编译预处理命令，行尾不需要分号</h1>
 <p>.h文件通常被称为头文件</p>
@@ -3371,6 +3375,7 @@
 </tr>
 </tbody>
 </table>
+<p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1222/1jesfjcj.webp" /></p>
 <h3 id="if">#if</h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#if 常量表达式</span>
 <span class="w">    </span><span class="n">程序段</span>
