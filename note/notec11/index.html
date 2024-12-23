@@ -1852,28 +1852,70 @@
       
         <li class="md-nav__item">
   <a href="#2_1" class="md-nav__link">
-    2.预处理指令
+    2.编译预处理指令
   </a>
   
-    <nav class="md-nav" aria-label="2.预处理指令">
+    <nav class="md-nav" aria-label="2.编译预处理指令">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#define" class="md-nav__link">
-    #define
+    define
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#inculde" class="md-nav__link">
-    #inculde
+    inculde
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifdef" class="md-nav__link">
+    ifdef
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3main" class="md-nav__link">
+    3.main()的参数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4typedef" class="md-nav__link">
+    4.typedef
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5mallocfree" class="md-nav__link">
+    5.malloc()与free()函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.递归
+  </a>
   
 </li>
       
@@ -3347,28 +3389,70 @@
       
         <li class="md-nav__item">
   <a href="#2_1" class="md-nav__link">
-    2.预处理指令
+    2.编译预处理指令
   </a>
   
-    <nav class="md-nav" aria-label="2.预处理指令">
+    <nav class="md-nav" aria-label="2.编译预处理指令">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#define" class="md-nav__link">
-    #define
+    define
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#inculde" class="md-nav__link">
-    #inculde
+    inculde
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifdef" class="md-nav__link">
+    ifdef
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3main" class="md-nav__link">
+    3.main()的参数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4typedef" class="md-nav__link">
+    4.typedef
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5mallocfree" class="md-nav__link">
+    5.malloc()与free()函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.递归
+  </a>
   
 </li>
       
@@ -3404,10 +3488,10 @@
 </code></pre></div>
 <p><strong>静态变量赋初值只在函数第一次调用时起作用，之后进入函数保持上次离开时的值。</strong>若没有赋初值，系统自动赋0。</p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1221/n4py01te.webp" /></p>
-<h2 id="2_1">2.预处理指令</h2>
+<h2 id="2_1">2.编译预处理指令</h2>
 <p><img alt="7e0397676ecfae6e6809bab10754a9f" src="https://file.cc98.org/v4-upload/d/2024/1107/sqqf52ir.webp" /></p>
 <p><img alt="e78ba7326593f479190595f246e3b96" src="https://file.cc98.org/v4-upload/d/2024/1107/kfpmu3mv.webp" /></p>
-<h3 id="define">#define</h3>
+<h3 id="define">define</h3>
 <p>可用#define定义宏，可定义常量，也可以带参数</p>
 <p>如果一个宏的值中有其他宏的名字，也会被替换</p>
 <p>如果一个宏的值超过一行，最后一行之前的行末需要加\</p>
@@ -3418,8 +3502,8 @@
 <p>2.带参数的宏实现简单的函数功能</p>
 <p>若避免优先级引起误解，应定义F(x,y)  ((x)+(y))，<strong>结尾不能加分号</strong></p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1221/flegufod.webp" /></p>
-<h3 id="inculde">#inculde</h3>
-<h1 id="_1">开头，表示编译预处理命令，行尾不需要分号</h1>
+<h3 id="inculde">inculde</h3>
+<p>井号开头，表示编译预处理命令，行尾不需要分号</p>
 <p>.h文件通常被称为头文件</p>
 <table>
 <thead>
@@ -3460,7 +3544,7 @@
 </tbody>
 </table>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1222/1jesfjcj.webp" /></p>
-<h3 id="if">#if</h3>
+<h3 id="if">if</h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#if 常量表达式</span>
 <span class="w">    </span><span class="n">程序段</span>
 <span class="cp">#endif</span>
@@ -3468,7 +3552,7 @@
 <p>对常量表达式求值，如果结果非0，那么#if和#endif之间的程序段会被执行，否则不会处理。</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#if指令后面也可以有#elif和#else指令</span>
 </code></pre></div>
-<h3 id="ifdef">#ifdef</h3>
+<h3 id="ifdef">ifdef</h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#ifdef 标识符</span>
 <span class="w">     </span><span class="n">程序段</span>
 <span class="cp">#endif</span>
