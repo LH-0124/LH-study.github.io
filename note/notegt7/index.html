@@ -2235,7 +2235,7 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    矩法
+    矩估计法
   </a>
   
 </li>
@@ -3444,7 +3444,7 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    矩法
+    矩估计法
   </a>
   
 </li>
@@ -3606,7 +3606,7 @@
 <p><a href="https://www.cc98.org/topic/5905189">cc98链接</a></p>
 <h1 id="chapter-7">Chapter 7 参数估计</h1>
 <h2 id="_1">点估计</h2>
-<h3 id="_2">矩法</h3>
+<h3 id="_2">矩估计法</h3>
 <p>​        <strong>统计思想：以样本矩估计总体矩，以样本矩的函数估计总体矩的函数，矩包括<span class="arithmatex">\(k\)</span>阶原点矩和<span class="arithmatex">\(k\)</span>阶中心矩</strong></p>
 <p>​   根据大数定理，当样本容量<span class="arithmatex">\(n\rightarrow+\infty\)</span>时，样本矩依概率收敛于相应的总体矩，即
 $$
@@ -3621,7 +3621,8 @@ $$</p>
 $$
 \hat \theta_m=h_m(A_1,A_2,\ldots,A_k)
 $$
-​   将<span class="arithmatex">\(\hat \theta_m\)</span>称为参数<span class="arithmatex">\(\theta_m\)</span>的矩估计量</p>
+​   将<span class="arithmatex">\(\hat \theta_m\)</span>称为参数<span class="arithmatex">\(\theta_m\)</span>​的矩估计量</p>
+<p><strong>特别地，矩估计中用样本二阶中心矩来估计总体方差</strong></p>
 <h3 id="_3">极大似然法</h3>
 <p>​   若事件A发生的概率依赖于待估参数<span class="arithmatex">\(\theta\)</span>，且观察到A事件已经发生，则用使事件A发生的概率达到最大的<span class="arithmatex">\(\theta\)</span>值作为<span class="arithmatex">\(\theta\)</span>的估计。</p>
 <p>​   对于离散总体，设其概率分布为<span class="arithmatex">\(P\{X=x\}=p(x;\theta)\)</span>, <span class="arithmatex">\(\theta \in \Theta\)</span>, <span class="arithmatex">\(\Theta\)</span>是参数空间,则样本<span class="arithmatex">\(X_1,X_2,\ldots ,X_n\)</span>取到<span class="arithmatex">\(x_1,x_2,\ldots ,x_n\)</span>的概率为<span class="arithmatex">\(\prod\limits_{i=1}^nP\{X_i=x_i\}=\prod\limits_{i=1}^np(x_i;\theta)\)</span></p>
@@ -3742,7 +3743,7 @@ $$
 $$
 <img alt="" src="https://file.cc98.org/v4-upload/d/2024/1205/1c4vwkco.webp" /></p>
 <h3 id="_16">有效性准则</h3>
-<p>​   若<span class="arithmatex">\(\hat\theta_1, \hat \theta_2\)</span>都是无偏估计，且<span class="arithmatex">\(\forall \theta \in \Theta, Var_\theta(\hat \theta_1)\le Var_\theta(\hat \theta_2)\)</span>，要求至少有一个<span class="arithmatex">\(\theta\)</span>使不等号成立，则称<span class="arithmatex">\(\hat \theta_1\)</span>比<span class="arithmatex">\(\hat \theta_2\)</span>更有效。</p>
+<p>​   若<span class="arithmatex">\(\hat\theta_1, \hat \theta_2\)</span><strong>都是无偏估计</strong>，且<span class="arithmatex">\(\forall \theta \in \Theta, Var_\theta(\hat \theta_1)\le Var_\theta(\hat \theta_2)\)</span>，要求至少有一个<span class="arithmatex">\(\theta\)</span>使不等号成立，则称<span class="arithmatex">\(\hat \theta_1\)</span>比<span class="arithmatex">\(\hat \theta_2\)</span>更有效。</p>
 <p>简单理解：方差越小越有效</p>
 <h3 id="_17">均方误差准则</h3>
 <p>称<span class="arithmatex">\(\text{Mse}(\hat \theta)\)</span>为估计量<span class="arithmatex">\(\hat \theta\)</span>的均方误差，要使<span class="arithmatex">\(\text{Mse}(\hat \theta)=E[(\hat \theta -\theta)^2]\)</span>​尽量小</p>
