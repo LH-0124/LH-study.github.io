@@ -2084,8 +2084,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fstell" class="md-nav__link">
-    fstell()
+  <a href="#ftell" class="md-nav__link">
+    ftell()
   </a>
   
 </li>
@@ -3520,8 +3520,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fstell" class="md-nav__link">
-    fstell()
+  <a href="#ftell" class="md-nav__link">
+    ftell()
   </a>
   
 </li>
@@ -3577,13 +3577,13 @@
 <h2 id="1">1.文件类型指针</h2>
 <div class="highlight"><pre><span></span><code><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp</span><span class="p">;</span>
 </code></pre></div>
-<p>FILE是文件类型定义符，fp是文件类型的指针变量</p>
+<p>FILE是文件结构类型定义符，fp是文件结构指针</p>
 <p>文件类型不像以前普通指针那样能进行fp++或*fp等操作，fp++意味着指向下一个FILE结构（如果存在）。</p>
 <h2 id="2">2.打开文件和关闭文件</h2>
 <h3 id="fopen">打开文件fopen()</h3>
 <p>可以使用 <strong>fopen( )</strong> 函数来创建一个新的文件或者打开一个已有的文件，这个调用会初始化类型 <strong>FILE</strong> 的一个对象，类型 <strong>FILE</strong> 包含了所有用来控制流的必要的信息。下面是这个函数调用的原型：</p>
 <div class="highlight"><pre><span></span><code><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="nf">fopen</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">mode</span><span class="w"> </span><span class="p">);</span>
-<span class="n">fopen</span><span class="p">(</span><span class="s">&quot;文件名&quot;</span><span class="err">，</span><span class="s">&quot;文件打开方式&quot;</span><span class="p">);</span>
+<span class="n">fopen</span><span class="p">(</span><span class="s">&quot;文件名&quot;</span><span class="p">,</span><span class="s">&quot;文件打开方式&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>在这里，<strong>filename</strong> 是字符串，用来命名文件，访问模式 <strong>mode</strong> 的值可以是下列值中的一个：</p>
 <table>
@@ -3641,6 +3641,11 @@
 <p>如果成功关闭文件，<strong>fclose( )</strong> 函数返回零，如果关闭文件时发生错误，函数返回 <strong>EOF</strong>。这个函数实际上，会清空缓冲区中的数据，关闭文件，并释放用于该文件的所有内存。EOF 是一个定义在头文件 <strong>stdio.h</strong> 中的常量。</p>
 <h2 id="3">3.文件读写</h2>
 <h3 id="fgetcfputc">字符方式：fgetc()和fputc()</h3>
+<div class="highlight"><pre><span></span><code><span class="n">fgetc</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp1</span><span class="p">);</span>
+<span class="n">fgetc</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp2</span><span class="p">);</span>
+</code></pre></div>
+<p>fgetc()从文件中读取一个char类型变量，读完一个元素自动移动一格。fputc()向文件中写入一个char类型变量</p>
+<p>fgetc()当强行读成EOF处的内容会返回EOF即-1</p>
 <p>fgetc()写文件成功返回读取的元素，写文件失败返回EOF。读到文件末尾，会读到无效字符，返回EOF</p>
 <h3 id="fgetsfputs">字符串方式：fgets()和fputs()</h3>
 <div class="highlight"><pre><span></span><code><span class="n">fputs</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">fp</span><span class="p">)</span>
@@ -3651,10 +3656,17 @@
 <p>n为指定读入字符的个数</p>
 <p>最多读取n-1个字符，<strong>达到指定个数，接收到换行符或接收到结束标志EOF，在读取的字符后自动加'\0'</strong>。若有换行符，则换行符保留，若有EOF，不保留EOF。执行成功，返回读取的字符串，否则返回空指针</p>
 <h3 id="fscanffprintf">格式化方式：fscanf()和fprintf()</h3>
-<div class="highlight"><pre><span></span><code><span class="n">fscanf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="s">&quot;%d%f&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
-<span class="n">fprintf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="s">&quot;%d%f&quot;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp1</span><span class="p">,</span><span class="n">fp2</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="n">fscanf</span><span class="p">(</span><span class="n">fp1</span><span class="p">,</span><span class="s">&quot;%d%f&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">fp2</span><span class="p">,</span><span class="s">&quot;%d%f&quot;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="freadfwrite">数据块方式读写函数：fread()和fwrite()</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="n">fread</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">fp</span><span class="p">);</span><span class="w">  </span><span class="c1">//读取fp文件中的n个字节保存到p指向的内存的内存块中</span>
+<span class="n">fwrite</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">fp</span><span class="p">);</span><span class="w"> </span><span class="c1">//把p指向的n个字节写入到文件中</span>
+</code></pre></div>
 <h2 id="4">4.其他相关函数</h2>
 <h3 id="rewind">rewind()</h3>
 <p>定位文件读写位置指针，使其指向读写文件的首地址。</p>
@@ -3665,10 +3677,14 @@
 </code></pre></div>
 <p>offset为移动偏移量，long型数据，常量要加上后缀"L"</p>
 <p>from为从哪个位置开始偏移，from=0——文件首部，from=1——当前位置，from=2——文件尾部</p>
-<h3 id="fstell">fstell()</h3>
+<h3 id="ftell">ftell()</h3>
+<div class="highlight"><pre><span></span><code><span class="n">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">SEEK_END</span><span class="p">);</span><span class="w">  </span><span class="c1">//把文件指针移到EOF处</span>
+<span class="kt">long</span><span class="w"> </span><span class="n">len</span><span class="o">=</span><span class="n">ftell</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp</span><span class="p">);</span><span class="w">   </span><span class="c1">//返回当前指针与文件首字节处的距离，即文件长度</span>
+</code></pre></div>
 <p>获取当前文件读写文件位置指针的位置，即相对于文件开头的偏移量</p>
 <h3 id="feof">feof()</h3>
-<p>判断是否已经达到文件末尾</p>
+<p>判断是否已经达到文件末尾，即文件内容末字节的后面那个位置</p>
+<p><strong>feof(fp)一定要等到程序中有语句去尝试读一次EOF处的不存在的char之后才会返回1</strong></p>
 <p>返回1表示已到达，0表示未到达</p>
 <h3 id="ferror">ferror()</h3>
 <p>检查文件在各种输入输出函数读写是否出错</p>
