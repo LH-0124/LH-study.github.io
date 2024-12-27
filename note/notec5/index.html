@@ -3537,9 +3537,12 @@
 <h3 id="_2">定义注意点</h3>
 <p>C89不支持int a[n]的定义，方括号必须为常数</p>
 <p>但C99支持</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
 </code></pre></div>
-<p>定义时，不会报错，但后两个元素不能确定</p>
+<p>对数组的部分元素定义时，未被定义的元素初值被赋值为0</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+</code></pre></div>
+<p>数组初始化时，如果对全部元素都赋了初值，就可以省略数组长度。但是只对部分元素初始化时，数组长度不能省略</p>
 <h3 id="_3">万能公式求数组长度</h3>
 <div class="highlight"><pre><span></span><code><span class="n">a_len</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div>
@@ -3626,15 +3629,60 @@
 <p>由于上述特性，当列索引越界时，如a[0] [4]，这个元素看作a[0] [3]右边的元素，等价于a[1] [0]。这是右越界的情况。再来看左越界，a[1] [-1]可以等价为a[0] [3] </p>
 <p>利用越界特性，可以用一重循环来赋值一个二维数组</p>
 <h3 id="_10">二维数组边定义边赋值</h3>
-<div class="highlight"><pre><span></span><code><span class="kt">short</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="w"> </span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">},{</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">}};</span><span class="w">   </span><span class="cm">/*行号可以空心，列数不可以空心*/</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w">  </span><span class="cm">/*n=4，行数*/</span>
-<span class="n">n</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span><span class="w">   </span><span class="cm">/*n=8，总元素个数*/</span>
+<div class="highlight"><pre><span></span><code><span class="kt">short</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="w"> </span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">},{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">},{</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">}};</span><span class="w">   </span><span class="c1">//定义了全部元素时，行号可以空心，列数不可以空心</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w">  </span><span class="c1">//n=4，行数</span>
+<span class="n">n</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span><span class="w">   </span><span class="c1">//n=8，总元素个数</span>
 </code></pre></div>
-<p>定义时数组行号可以空心，列数不可以空心</p>
+<p>初始化时，如果定义了二维数组的全部元素，数组行号可以空心，列数不可以空心</p>
+<p>如果只定义部分元素，行号和列号都不能省略，且未被初始化的元素初值为0</p>
 
 
 
 
+
+<script src="https://giscus.app/client.js"
+        data-repo="LH-0124/LHstudy"
+        data-repo-id="R_kgDONJ_OXA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONJ_OXM4CkE7y"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+                /* Instruct Giscus to change theme */
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>

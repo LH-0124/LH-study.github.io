@@ -3562,6 +3562,7 @@
 <h2 id="3">3.运算符优先级与结合性</h2>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1107/r1j4yckh.webp" /></p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1107/2hwvsxlr.webp" /></p>
+<p><strong>记忆方法：初等&gt;单目&gt;运算&gt;移位&gt;关系&gt;位逻辑&gt;逻辑运算&gt;三目&gt;赋值&gt;逗号</strong></p>
 <p>优先级从上到下，第二优先级的*表示指针</p>
 <p>left to right表示左结合，right to left表示右结合</p>
 <p>=赋值运算是右结合，所以z=(y=x+2)中，（y=x+2）中y的值被赋为右边的值，即x+2的值</p>
@@ -3585,8 +3586,8 @@
 <h3 id="_8"><strong>逗号运算符和逗号表达式</strong></h3>
 <p>逗号表达式的值等于最后一个表达式的值 </p>
 <p><strong>例：</strong></p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="w">      </span>
-<span class="w">    </span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">y</span><span class="o">+=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">+=</span><span class="n">z</span><span class="p">);</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="w">      </span>
+<span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">y</span><span class="o">+=</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">+=</span><span class="n">z</span><span class="p">);</span><span class="w"> </span>
 </code></pre></div>
 <p>本例中，x最后被赋值为8，同时y,z的值都改变</p>
 <h3 id="sizeof"><strong>sizeof</strong></h3>
@@ -3600,13 +3601,58 @@
 <p>？  ： 是右结合性，</p>
 <div class="admonition note">
 <p class="admonition-title">例子</p>
-<p>a&gt;0  ?  1 :  a&lt;0  ?  -1  :  0;  //本例中，先做(a&lt;0  ?  -1 : 0)</p>
+<p>a&gt;0  ?  1 :  a&lt;0  ?  -1  :  0; </p>
 </div>
+<p>本例中，先做(a&lt;0  ?  -1 : 0)</p>
 <p><strong>右结合运算符共三类：=、？：、优先级排第二的所有运算符</strong></p>
 
 
 
 
+
+<script src="https://giscus.app/client.js"
+        data-repo="LH-0124/LHstudy"
+        data-repo-id="R_kgDONJ_OXA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONJ_OXM4CkE7y"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+                /* Instruct Giscus to change theme */
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
 
                 
               </article>
