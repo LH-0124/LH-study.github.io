@@ -2148,6 +2148,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    11.函数指针
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3694,6 +3701,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    11.函数指针
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3969,6 +3983,66 @@
 <p>只有对象（容器）可以取地址，对象包括变量、数组、函数。所以&amp;a[0]不能取地址，即a在取地址时不能理解为&amp;a[0]</p>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">u</span><span class="p">)[</span><span class="mi">100</span><span class="p">]</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="c1">//此处a是数组a，而不是&amp;a[0]</span>
 <span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">t</span><span class="o">=&amp;</span><span class="n">p</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="11">11.函数指针</h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">sub</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">mul</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">div</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">find_index</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">operator</span><span class="p">)</span><span class="w">   </span><span class="cm">/* 根据operator返回其在a中的下标 */</span>
+<span class="p">{</span><span class="w">                               </span><span class="cm">/* &#39;+&#39;  &#39;-&#39;  &#39;*&#39;  &#39;/&#39;的下标分别为0、1、2、3 */</span>
+<span class="w">   </span><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;+-*/&quot;</span><span class="p">;</span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">   </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">operator</span><span class="p">)</span>
+<span class="w">         </span><span class="k">return</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">[</span><span class="mi">4</span><span class="p">])(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* pf是指针数组, 每个元素均为函数指针; 把*pf[4]替换成X, */</span>
+<span class="w">   </span><span class="p">{</span><span class="w">                            </span><span class="cm">/* 可以发现X是一个函数, 故pf[i]指向一个函数, pf[i]就是函数指针 */</span>
+<span class="w">      </span><span class="n">add</span><span class="p">,</span><span class="w"> </span><span class="n">sub</span><span class="p">,</span><span class="w"> </span><span class="n">mul</span><span class="p">,</span><span class="w"> </span><span class="n">div</span><span class="w">        </span><span class="cm">/* 函数名可以理解成函数的地址, 例如这里的add代表add()函数的地址 */</span>
+<span class="w">   </span><span class="p">};</span><span class="w">                           </span><span class="cm">/* 所谓函数的地址是指该函数经过编译后生成的机器码的首字节的地址 */</span>
+<span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">;</span>
+<span class="w">   </span><span class="kt">char</span><span class="w"> </span><span class="n">operator</span><span class="p">;</span>
+<span class="w">   </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %c %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">operator</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+<span class="w">   </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">[</span><span class="n">find_index</span><span class="p">(</span><span class="n">operator</span><span class="p">)])(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"> </span>
+<span class="w">                                </span><span class="cm">/* pf[0]就是add()函数的地址, *pf[0]就是add()函数本身, </span>
+<span class="cm">                                   故(*pf[0])(x, y)相当于add(x, y);</span>
+<span class="cm">                                   函数指针数组的意义在于我们可以通过它实现多分支结构,</span>
+<span class="cm">                                   要是不用函数指针数组, 就需要通过以下多分支结构来实现</span>
+<span class="cm">                                   对x、y的加减乘除:</span>
+<span class="cm">                                   if(operator == &#39;+&#39;)</span>
+<span class="cm">                                      z = add(x, y);</span>
+<span class="cm">                                   else if(operator == &#39;-&#39;)</span>
+<span class="cm">                                      z = sub(x, y);</span>
+<span class="cm">                                   else if(operator == &#39;*&#39;)</span>
+<span class="cm">                                      z = mul(x, y);</span>
+<span class="cm">                                   else if(operator == &#39;/&#39;)</span>
+<span class="cm">                                      z = div(x, y);</span>
+<span class="cm">                                 */</span>
+<span class="w">   </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %c %d = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">operator</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span><span class="w">                                 </span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 
 
