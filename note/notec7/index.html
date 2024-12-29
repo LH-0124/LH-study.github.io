@@ -3901,13 +3901,14 @@
 <span class="n">p</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 <span class="n">q</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
 </code></pre></div>
+<p><strong>数组指针也可以定义位int (*p)[4]</strong></p>
 <p>p指向a[0]这个一维数组，他的地址为a[0] [0]的地址，故p==q</p>
 <p>p是数组指针，它指向了一个一维数组</p>
 <p>数组指针的类型可表示为int  (*p)[10]，这是因为[]优先级高，这个类型可以理解为p是一个指向int  [10]数组类型的指针。</p>
 <h3 id="_13">数组指针运算</h3>
 <p>p+i表示p所指向的第i个元素，为a[i]</p>
 <p>p[i]表示*(p+i)，为a[i]，所以p[i] [j]的值为a[i] [j]</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">))[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w">   </span><span class="o">**</span><span class="n">注意</span><span class="p">[]</span><span class="n">优先级比</span><span class="w"> </span><span class="o">*</span><span class="n">高</span><span class="err">，</span><span class="n">所以要有括号</span><span class="o">**</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">))[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w">   </span><span class="c1">//注意[]优先级比 *高，所以要有括号</span>
 <span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
 <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">)</span><span class="o">==</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
 </code></pre></div>
