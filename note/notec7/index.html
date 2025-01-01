@@ -4019,7 +4019,8 @@
 <p>此处的a必须理解成数组a，不能理解成&amp;a[0]</p>
 <p>（2）赋值</p>
 <p>a= "xyz";  语法错误，这里的a就是&amp;a[0]即它是一个常数，不能被赋值</p>
-<p>p="xyz";   语法正确</p>
+<p>p="xyz";   语法正确。</p>
+<p><strong>注意：作为数组时，a是一个指针常量，一直代表a[0]的地址，所以既不能对a直接赋值，也不能对a进行++的操作</strong></p>
 <p>（3）取地址</p>
 <p>只有对象（容器）可以取地址，对象包括变量、数组、函数。所以&amp;a[0]不能取地址，即a在取地址时不能理解为&amp;a[0]</p>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">u</span><span class="p">)[</span><span class="mi">100</span><span class="p">]</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="c1">//此处a是数组a，而不是&amp;a[0]</span>

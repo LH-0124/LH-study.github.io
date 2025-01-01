@@ -20,7 +20,7 @@
     
     
       
-        <title>Notec11 - LH的资源小站</title>
+        <title>理论考个人错题整理 - LH的资源小站</title>
       
     
     
@@ -117,6 +117,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -147,7 +152,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Notec11
+              理论考个人错题整理
             
           </span>
         </div>
@@ -3260,6 +3265,44 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1typedef" class="md-nav__link">
+    1.typedef题型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2.数组的部分初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30" class="md-nav__link">
+    3.字符串的'\0'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4.逻辑表达式
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3277,9 +3320,47 @@
   
 
 
-  <h1>Notec11</h1>
-
-
+<h1 id="_1">理论考个人错题整理</h1>
+<h2 id="1typedef">1.typedef题型</h2>
+<p>（1）用typedef写出类型POINT的定义，使得POINT表示指向由10个<strong>字符指针构成的数组</strong>的<strong>指针</strong>类型</p>
+<p>这题很绕，首先先明确POINT是个数组指针，即(<em>POINT)[10]，而该数组指针指向的数组每个元素的变量类型为字符指针，故char * (</em>POINT)[10]</p>
+<p>再套上typedef</p>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">POINT</span><span class="p">)[</span><span class="mi">10</span><span class="p">];</span>
+</code></pre></div>
+<p>（2）已知一个函数指针类型，它所指的函数返回值类型为空类型，接受两个参数，一个是字符指针类型，一个是整型。用typedef将该函数指针命名为FunType</p>
+<p>先写出定义时函数指针类型<strong>（要记住）</strong>，再套上typedef</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">FunType</span><span class="p">)(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">FunType</span><span class="p">)(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="p">);</span>
+</code></pre></div>
+<h2 id="2">2.数组的部分初始化</h2>
+<p>（1）假设一个指针变量变量8个字节，则以下程序运行结果</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">a</span><span class="p">[][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">},</span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d#%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>二维数组部分初始化时，{1,2,3}被放在了第一行，{4}被放在第二行，没有被初始化的元素初始值被赋为0。所以该二维数组一共2行3列，共6个元素，每个元素类型为long，4字节，所以sizeof(a)等于24</p>
+<p>a[0]为a[0] [0]的地址，为一个指针类型，所以返回值为8</p>
+<p>（2）求sizeof(s)</p>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">80</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;apple</span><span class="se">\0</span><span class="s">grape</span><span class="se">\0</span><span class="s">pear</span><span class="se">\0</span><span class="s">coco</span><span class="se">\0</span><span class="s">&quot;</span><span class="p">};</span>
+</code></pre></div>
+<p>字符串数组初始化时，未被初始化的元素都会直接赋值为'\0'，而sizeof是统计整个s的，不是遇到'\0'就停下来，所以返回80</p>
+<h2 id="30">3.字符串的'\0'</h2>
+<p><strong>做题建议：补充所有字符串被省略的'\0'</strong></p>
+<p>求下列字符串常量的字符个数</p>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;zju</span><span class="se">\101\\</span><span class="s">TED&quot;</span>
+</code></pre></div>
+<p>\101表示八进制的字符串常量，101为八进制的ascii码值</p>
+<p>\ \表示单个反斜杠，第一个反斜杠是转义符</p>
+<p>但是字符串结尾最后一定有的'\0'不能忘记！</p>
+<h2 id="4">4.逻辑表达式</h2>
+<p>（1）-6&lt;=x&lt;=-2与x&gt;=-6 &amp;&amp; x&lt;=-2不等价，千万别被骗，-6&lt;=2的返回值不是0就是1，一定大于-2，所以该表达式恒为0</p>
+<p>（2）字符串指针非空为真，空为假</p>
 
 
 
