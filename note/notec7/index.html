@@ -2008,7 +2008,7 @@
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    指针与指针的比较
+    与指针的比较
   </a>
   
 </li>
@@ -3621,7 +3621,7 @@
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    指针与指针的比较
+    与指针的比较
   </a>
   
 </li>
@@ -3863,7 +3863,11 @@
 <p>计算公式如下：</p>
 <div class="highlight"><pre><span></span><code><span class="n">q</span><span class="o">-</span><span class="n">p</span><span class="o">=</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">q</span><span class="o">-</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="_7">指针与指针的比较</h3>
+<p>q、p 指针相减的意义实际上是计算两个指针差了几个“单位”的距离，指针相减并不是将其值（也就是地址）相减，如果这是预期行为，那么应该使用以下两种写法：</p>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">q</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">p</span><span class="p">);</span><span class="w"> </span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">q</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">);</span><span class="w"> </span><span class="c1">// 转为 char* 类型指针，单位就是一个字节，和地址相减效果相同</span>
+</code></pre></div>
+<h3 id="_7">与指针的比较</h3>
 <p>可以做大小比较的逻辑运算</p>
 <h3 id="_8">指针合法运算</h3>
 <p>（1）p+i  指针加减一个整数</p>

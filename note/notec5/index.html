@@ -3693,7 +3693,7 @@
 <span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w">  </span><span class="c1">//n=4，行数</span>
 <span class="n">n</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span><span class="w">   </span><span class="c1">//n=8，总元素个数</span>
 </code></pre></div>
-<p>初始化时，如果定义了二维数组的全部元素，数组行号可以空心，列数不可以空心</p>
+<p>初始化时，如果定义的二维数组能看出行数，则数组行号可以空心，列号在任何时候都不可以空心</p>
 <p>如果只定义部分元素，行号和列号都不能省略，且未被初始化的元素初值为0</p>
 
 
