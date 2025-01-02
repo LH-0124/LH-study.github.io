@@ -3892,7 +3892,7 @@
 <h3 id="_12">通用指针</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
 </code></pre></div>
-<p>上述定义的指针为通用指针</p>
+<p>上述定义的指针为通用指针，即<strong>指向任意类型的指针</strong></p>
 <p>void表示无类型，它不能用来定义一个变量</p>
 <p>void函数类型表示没有返回变量</p>
 <p>void可以放在函数的形参内，表示该函数没有参数，调用时不要写参数，直接写f()</p>
@@ -3913,6 +3913,7 @@
 <p>p赋值为变量a的地址，*p表示p指向的变量，为a</p>
 <p>*p+=1，a也会加1</p>
 <p>地址传递的方式可以在两个不同的函数内部改变一个变量的值，传入数组时相当于地址传递</p>
+<p><strong>如果使用数组名作为函数参数，那么它会被立即转换为指针。因此C语言会自动把作为参数的数组声明转换为相应的指针声明。</strong></p>
 <p><strong>值传递</strong></p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1205/0ppp2ctl.webp" /></p>
 <p>两个变量a虽然同名，但是属于两个不同函数，互不影响，在f里面对a++不影响main函数的a</p>

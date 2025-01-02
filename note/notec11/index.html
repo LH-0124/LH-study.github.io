@@ -2071,6 +2071,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5、数组、指针和结构
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3400,6 +3407,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5、数组、指针和结构
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3421,9 +3435,8 @@
 <h1 id="_1">理论考个人错题整理</h1>
 <h2 id="1typedef">1.typedef题型</h2>
 <p>（1）用typedef写出类型POINT的定义，使得POINT表示指向由10个<strong>字符指针构成的数组</strong>的<strong>指针</strong>类型</p>
-<p>这题很绕，首先先明确POINT是个数组指针，即(<em>POINT)[10]，而该数组指针指向的数组每个元素的变量类型为字符指针，故char * (</em>POINT)[10]</p>
-<p>再套上typedef</p>
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">POINT</span><span class="p">)[</span><span class="mi">10</span><span class="p">];</span>
+<div class="highlight"><pre><span></span><code><span class="c1">//这题很绕，首先先明确POINT是个数组指针，即(*POINT)[10]，而该数组指针指向的数组每个元素的变量类型为字符指针，故char * (*POINT)[10]，最后再套上typedef</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">POINT</span><span class="p">)[</span><span class="mi">10</span><span class="p">];</span>
 </code></pre></div>
 <p>（2）已知一个函数指针类型，它所指的函数返回值类型为空类型，接受两个参数，一个是字符指针类型，一个是整型。用typedef将该函数指针命名为FunType</p>
 <p>先写出定义时函数指针类型<strong>（要记住）</strong>，再套上typedef</p>
@@ -3448,6 +3461,8 @@
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">80</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;apple</span><span class="se">\0</span><span class="s">grape</span><span class="se">\0</span><span class="s">pear</span><span class="se">\0</span><span class="s">coco</span><span class="se">\0</span><span class="s">&quot;</span><span class="p">};</span>
 </code></pre></div>
 <p>字符串数组初始化时，未被初始化的元素都会直接赋值为'\0'，而sizeof是统计整个s的，不是遇到'\0'就停下来，所以返回80</p>
+<p>需要注意的是strlen(s)是不计入'\0'元素的，并且到了第一个'\0'元素就停下了</p>
+<p>（3）二维数组定义时，行号可以省略，列号不可以省略</p>
 <h2 id="30">3.字符串的'\0'</h2>
 <p><strong>做题建议：补充所有字符串被省略的'\0'</strong></p>
 <p>求下列字符串常量的字符个数</p>
@@ -3459,6 +3474,77 @@
 <h2 id="4">4.逻辑表达式</h2>
 <p>（1）-6&lt;=x&lt;=-2与x&gt;=-6 &amp;&amp; x&lt;=-2不等价，千万别被骗，-6&lt;=2的返回值不是0就是1，一定大于-2，所以该表达式恒为0</p>
 <p>（2）字符串指针非空为真，空为假</p>
+<p>（3）'\0'代表ascll码0，值为假；'0'代表ascll码48，值为真</p>
+<h2 id="5">5、数组、指针和结构</h2>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"> </span><span class="c1">//数组</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span><span class="w"> </span><span class="c1">//指针数组，数组的每个元素类型是int*</span>
+<span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">)[</span><span class="mi">5</span><span class="p">];</span><span class="w"> </span><span class="c1">//数组指针，a是一个指针，指向一个int [5]的数组</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="nf">a</span><span class="p">();</span><span class="c1">//a是一个函数，返回值为int *类型</span>
+<span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">)(</span><span class="kt">char</span><span class="o">*</span><span class="p">);</span><span class="c1">//a是一个函数的指针，指向的函数返回值为int,参数类型为char*</span>
+</code></pre></div>
+<p>（1）</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<span class="n">下列表达式正确的是</span><span class="err">（</span><span class="w"> </span><span class="err">）</span>
+<span class="n">A</span><span class="p">.</span><span class="w"> </span><span class="n">p</span><span class="o">=</span><span class="n">a</span>
+<span class="n">B</span><span class="p">.</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">a</span>
+<span class="n">C</span><span class="p">.</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">p</span><span class="p">;</span>
+<span class="n">D</span><span class="p">.</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="c1">//A，数组是指针常量，不能直接赋值</span>
+<span class="c1">//B.p[0]类型应该是int，但是a代表的是a[0]的地址，而a[0]类型为int *，故a类型可以理解为int **</span>
+<span class="c1">//C.*(a+1)=*(&amp;a[0]+1)=*(&amp;a[1])=a[1]，类型为int *，而p数组代表的是首元素的地址，类型是int *，类型对应，赋值成功</span>
+<span class="c1">//D.a[0]类型为int *，类型不匹配</span>
+</code></pre></div>
+<p>（2）</p>
+<div class="highlight"><pre><span></span><code><span class="n">求z的值</span>
+<span class="k">static</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<span class="p">}</span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">},{</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">},{</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">}},</span><span class="o">*</span><span class="n">p</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">-1</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="p">;</span>
+<span class="n">z</span><span class="o">=*</span><span class="p">((</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="o">++</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="mi">-1</span><span class="p">));</span>
+<span class="c1">//先执行++p，将p指向a[0]，再加1，将p指向a[1],然后强制转化为int *类型（原来类型为 struct *）,此时再减1，p指向a[1]首元素地址-1的位置，即4这个元素，最后解引用，得4。</span>
+</code></pre></div>
+<p>（3）</p>
+<div class="highlight"><pre><span></span><code><span class="n">下列赋值正确的是</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span><span class="n">p</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="o">*</span><span class="n">q</span><span class="o">=</span><span class="n">p</span><span class="p">;</span>
+<span class="c1">//q.k=2;  q是指针，不能直接用.运算符</span>
+<span class="c1">//p[0]-&gt;k=2;  p[0]是一个struct变量，不能用-&gt;运算符</span>
+<span class="c1">//(p-&gt;s)[0]=&#39;a&#39;;   正确</span>
+<span class="c1">//q-&gt;s=&quot;a&quot;;   字符串是指针常量，不能直接赋值</span>
+</code></pre></div>
+<p>（4）</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+<span class="p">}</span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;ABC&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s">&quot;abc&quot;</span><span class="p">},</span><span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="n">a</span><span class="p">;</span>
+<span class="n">求表达式</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">++</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">s的值</span>
+<span class="c1">//p++返回p，箭头运算符优先级高，返回“ABC”，可以理解为首元素的地址，最后解引用得&#39;A&#39;</span>
+</code></pre></div>
+<p>（5）</p>
+<div class="highlight"><pre><span></span><code><span class="kt">short</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span><span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">求</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">a的值</span>
+<span class="c1">//p-a的计算公式为((int)p-(int)a)/sizeof(*p),一个short类型字节为2，原来指针p与a相差10个地址，转化为char*后，计算时分母的类型为char,即1字节，所以值为10</span>
+</code></pre></div>
+<p>（6）</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">H</span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">;</span>
+<span class="p">}</span><span class="n">a</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;Wang&quot;</span><span class="p">},</span><span class="o">*</span><span class="n">p</span><span class="o">=&amp;</span><span class="n">a</span><span class="p">;</span>
+<span class="n">计算下列输出结果</span><span class="err">：</span>
+<span class="w">    </span><span class="o">*</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">s</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="o">++</span><span class="n">a</span><span class="p">.</span><span class="n">s</span><span class="p">);</span>
+<span class="c1">//-&gt;优先级最高,p-&gt;s为&quot;Wang&quot;首元素的地址，而*与++同级，且这两者是右结合性，所以先s++，虽然返回s值，但是s的指针已经到了s[1]的地址上。然后访问a.s，此时s是s[1]的地址，再做++,返回s+1的值，固s最后指向s[2]的地址，所以最后输出&quot;ng&quot;。</span>
+</code></pre></div>
+<p>（7）</p>
+<div class="highlight"><pre><span></span><code><span class="n">若有函数声明void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">p</span><span class="p">)</span><span class="err">，</span><span class="n">则下列调用f</span><span class="p">(</span><span class="n">var</span><span class="p">)</span><span class="n">不正确的是</span>
+<span class="c1">//char var[10][10]，二维数组不能理解为二级指针，只能理解为数组指针，类型不对应</span>
+<span class="c1">//char *var[10]，此为指针数组，也可以理解为首元素的指针，首元素的类型为char *，固var可以理解为char **</span>
+<span class="c1">//void *var=NULL;  void*类型可以理解为指向任意类型的指针，令该类型为char *，则var类型为char **</span>
+<span class="c1">//char *v=NULL,**var=&amp;v; var类型为char **</span>
+</code></pre></div>
 
 
 
