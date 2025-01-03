@@ -3709,7 +3709,7 @@
 <p>最多读取n-1个字符，<strong>达到指定个数，接收到换行符或接收到结束标志EOF，在读取的字符后自动加'\0'</strong>。若有换行符，则换行符保留，若有EOF，不保留EOF。执行成功，返回读取的字符串，否则返回空指针</p>
 <p>fgets()的第1个参数表示缓冲区的地址，该缓冲区用来保存读出来的字符串；第2个参数表示缓冲区的长度，此长度用来限制读出来的字符串中包含的字符个数，假设此参数为n，那么最多只读取n-1个字符，因为缓冲区中的最后一个字节要保留给'\0'；第3个参数是文件指针。当字符串长度(含'\n') &lt;= n-1时， fgets()会读取该字符串的全部内容；当字符串长度 &gt; n-1时，fgets()仅读取字符串前n-1个字符。fgets()在读取一行内容后会自动在该字符串末尾补上 '\0'。注意fgets()并不会像gets()那样丢弃字符串末尾的'\n', 它会把'\n'也读进来。当fgets()成功读取字符串时，会返回一个指针指向读到的内容；当fgets()读取EOF处的内容时会返回空指针NULL。</p>
 <h3 id="fscanffprintf">格式化方式：fscanf()和fprintf()</h3>
-<div class="highlight"><pre><span></span><code><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp1</span><span class="p">,</span><span class="n">fp2</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp1</span><span class="p">,</span><span class="o">*</span><span class="n">fp2</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
 <span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="n">fscanf</span><span class="p">(</span><span class="n">fp1</span><span class="p">,</span><span class="s">&quot;%d%f&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
@@ -3730,6 +3730,7 @@
 </code></pre></div>
 <p>offset为移动偏移量，long型数据，常量要加上后缀"L"</p>
 <p>from为从哪个位置开始偏移，from=0——文件首部，from=1——当前位置，from=2——文件尾部</p>
+<p>成功返回0，失败返回非0</p>
 <h3 id="ftell">ftell()</h3>
 <div class="highlight"><pre><span></span><code><span class="n">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">SEEK_END</span><span class="p">);</span><span class="w">  </span><span class="c1">//把文件指针移到EOF处</span>
 <span class="kt">long</span><span class="w"> </span><span class="n">len</span><span class="o">=</span><span class="n">ftell</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">fp</span><span class="p">);</span><span class="w">   </span><span class="c1">//返回当前指针与文件首字节处的距离，即文件长度</span>

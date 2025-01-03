@@ -3629,7 +3629,7 @@
 </code></pre></div>
 <p>'\0'是八进制字符常数，ascII码=0，作为字符串结束标注</p>
 <h3 id="2">定义2</h3>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="w">   </span><span class="err">#</span><span class="n">注意必须是双引号</span><span class="err">，</span><span class="n">有隐藏</span><span class="sc">&#39;\0&#39;</span><span class="p">,</span><span class="n">所以s长度为6</span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;Hello&quot;</span><span class="w">   </span><span class="c1">//注意必须是双引号，有隐藏&#39;\0&#39;,所以s长度为6</span>
 </code></pre></div>
 <h3 id="aa">'A'与"A"区别</h3>
 <p>"A"由'A'和'\0'两个元素组成的字符串，而'A'为字符</p>
@@ -3654,7 +3654,7 @@
 <p>printf输出时，只输出"\0"左边的值，故输出"ABC"，实际上字符串还含有其他内容</p>
 <h3 id="gets"><strong>gets()输入</strong></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
-<span class="n">gets</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">     </span><span class="cm">/*不可写成a=gets()，因为a不是变量名，而是&amp;a[0]*/</span>
+<span class="n">gets</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">     </span><span class="c1">//不可写成a=gets()，因为a不是变量名，而是&amp;a[0]</span>
 </code></pre></div>
 <p>gets()以回车作为输入的结束标志，而不是空格</p>
 <p>以下内容摘自<a href="http://cc.zju.edu.cn/bhh/question.htm">小白网页问题4</a>：</p>
@@ -3672,9 +3672,9 @@
 <span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="o">=</span><span class="n">getchar</span><span class="p">())</span><span class="o">!=</span><span class="sc">&#39;\n&#39;</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
-<span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">     </span><span class="err">\</span><span class="o">*</span><span class="n">或合成a</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="o">*</span>\
+<span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">     </span><span class="c1">//或合成a[i++]=x</span>
 <span class="p">}</span>
-<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;\0&#39;</span><span class="p">;</span><span class="w">  </span><span class="err">\</span><span class="o">*</span><span class="n">只有末尾是</span><span class="sc">&#39;\0&#39;</span><span class="n">才是字符串</span><span class="o">*</span>\
+<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;\0&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">//只有末尾是&#39;\0&#39;才是字符串</span>
 <span class="n">printf</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="3">3.字符串函数</h2>

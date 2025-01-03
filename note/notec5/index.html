@@ -3623,7 +3623,7 @@
 <span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>每一轮把剩余元素的最大值冒泡分别到最后一个位置，倒数第二个位置，以此类推……</p>
+<p>每一轮把剩余元素的最大值冒泡分别到最后一个位置，倒数第二个位置，以此类推</p>
 <h3 id="_5">选择排序</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="mi">-1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
@@ -3631,12 +3631,12 @@
 <span class="w">    </span><span class="n">k</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;</span><span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="w">   </span><span class="err">#</span><span class="n">找到最小值下标</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;</span><span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="w">   </span><span class="c1">//找到最小值下标</span>
 <span class="w">            </span><span class="n">k</span><span class="o">=</span><span class="n">j</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="n">t</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 <span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="w">   </span><span class="err">#</span><span class="n">交换</span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">t</span><span class="w">   </span><span class="c1">//交换</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="_6">插入排序</h3>
@@ -3645,7 +3645,7 @@
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">x</span><span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">count</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="n">count为b数组已有元素的个数</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">count</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w">  </span><span class="c1">//count为b数组已有元素的个数</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
 <span class="w">            </span><span class="k">break</span><span class="p">;</span>

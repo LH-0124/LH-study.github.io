@@ -3835,19 +3835,22 @@
 <p>小数点后多余的小于五舍去，大于五进位；等于五看前一位是否为偶数，为偶数进位，为奇数舍去。</p>
 <h2 id="2switch-case">2.switch-case</h2>
 <p>基本结构：</p>
-<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">表达式</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
-<span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
-<span class="w">   </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">常量表达式1</span><span class="err">：</span><span class="w">    </span><span class="no">语句1</span>
+<span class="w">    </span><span class="no">case</span><span class="w"> </span><span class="no">常量表达式2</span><span class="err">：</span><span class="w">    </span><span class="no">语句2</span>
+<span class="w">       </span><span class="err">┇</span>
+<span class="w">    </span><span class="no">case</span><span class="w"> </span><span class="no">常量表达式n</span><span class="err">：</span><span class="w">    </span><span class="no">语句n</span>
+<span class="w">    </span><span class="no">default</span><span class="p">:</span><span class="w">        </span><span class="n">语句n</span><span class="o">+</span><span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>注意点：</p>
-<p>（1）a只能是变量，不能是表达式</p>
+<p>（1）switch 后面括号内的“表达式”必须是整数类型。也就是说可以是 int 型变量、char 型变量，也可以直接是整数或字符常量，哪怕是负数都可以。但绝对不可以float 型变量、double 型变量、小数常量通通不行，全部都是语法错误。</p>
 <p>（2）每个case冒号后面可以跟多句但不加大括号，但最后必须有break，若没有break，会继续往下执行case</p>
 <p>（3）default表示不在case所列的情况</p>
 <p>（4）case只能做==的比较，不能&gt;&lt;的比较</p>
 <p>（5）case的排列顺序可任意</p>
+<p>（6）case后面的值只能是常量</p>
 <h2 id="3if-else">3.if-else</h2>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1112/ftcicqea.webp" /></p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1112/rtes3lky.webp" /></p>
@@ -4045,8 +4048,8 @@
 <p>定义了一个新类型，可以代替unsigned long int</p>
 <p>deword a; 相当于unsigned long int a;</p>
 <div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tenint</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
-<span class="n">tenint</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="c1">//相当于 int a[10]</span>
-<span class="n">tenint</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="c1">//相当于 int a[2][10]</span>
+<span class="n">tenint</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">      </span><span class="c1">//相当于 int a[10]</span>
+<span class="n">tenint</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w">  </span><span class="c1">//相当于 int a[2][10]</span>
 </code></pre></div>
 <p>理解的方法简单粗暴一点就是把typedef的新类型tenint名字划掉，再把新定义的变量a代进去</p>
 <p>例：</p>

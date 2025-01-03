@@ -3810,8 +3810,8 @@
 </code></pre></div>
 <p>p是一个指针变量，它指向一个char，这里的*可以理解成一个向左的箭头←</p>
 <p>定义多个指针时，*不能共享，只属于离他最近的变量</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="o">*</span><span class="n">q</span><span class="p">;</span><span class="w">           </span><span class="cm">/*q类型为int类型指针*/</span>
-<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">;</span><span class="w">            </span><span class="cm">/*q类型为int*/</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="o">*</span><span class="n">q</span><span class="p">;</span><span class="w">           </span><span class="c1">//q类型为int类型指针</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">;</span><span class="w">            </span><span class="c1">//q类型为int</span>
 </code></pre></div>
 <p>变量p的类型是char *，表示p指向的对象的类型是char</p>
 <div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
@@ -3917,7 +3917,6 @@
 <p>p赋值为变量a的地址，*p表示p指向的变量，为a</p>
 <p>*p+=1，a也会加1</p>
 <p>地址传递的方式可以在两个不同的函数内部改变一个变量的值，传入数组时相当于地址传递</p>
-<p><strong>如果使用数组名作为函数参数，那么它会被立即转换为指针。因此C语言会自动把作为参数的数组声明转换为相应的指针声明。</strong></p>
 <p><strong>值传递</strong></p>
 <p><img alt="" src="https://file.cc98.org/v4-upload/d/2024/1205/0ppp2ctl.webp" /></p>
 <p>两个变量a虽然同名，但是属于两个不同函数，互不影响，在f里面对a++不影响main函数的a</p>
@@ -3934,6 +3933,7 @@
 <p>int *p是int p[]的本质。当p为指针变量时，p[i]表示指向该指针p指向的第i个元素，p[0]是p当前指向的元素</p>
 <p>p[i]等价于*(p+i)，用一维数组做函数的参数是地址传递</p>
 <p>数组是一个指针常量，不是变量，不能赋值或作类似a++的运算，地址不能改变</p>
+<p><strong>如果使用数组名作为函数参数，那么它会被立即转换为指针。因此C语言会自动把作为参数的数组声明转换为相应的指针声明。</strong></p>
 <h2 id="6">6.数组指针</h2>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span>
 <span class="p">{</span>
@@ -3960,9 +3960,9 @@
 <div class="admonition note">
 <p class="admonition-title">例子</p>
 <ul>
-<li>
-<p>① * (p[2]+1)=  * (a[2]+1) = * (&amp;a[2] [0]+1) = a[2] [1] = 21</p>
-<p>② * ( *(p+2)+3)= * (a[2]+3) = * (&amp;a[2] [0]+3)=a[2] [3] = 23</p>
+<li>① * (p[2]+1)=  * (a[2]+1) = * (&amp;a[2] [0]+1) = a[2] [1] = 21<ul>
+<li>② * ( *(p+2)+3)= * (a[2]+3) = * (&amp;a[2] [0]+3)=a[2] [3] = 23</li>
+</ul>
 </li>
 </ul>
 </div>
@@ -4052,6 +4052,9 @@
 <span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">t</span><span class="o">=&amp;</span><span class="n">p</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="11">11.函数指针</h2>
+<p>函数名可以理解成函数的地址</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">)</span><span class="o">=</span><span class="n">add</span><span class="p">;</span><span class="w"> </span><span class="c1">//指向add函数的指针</span>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
 <span class="p">{</span>
